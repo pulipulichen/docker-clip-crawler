@@ -20,14 +20,20 @@ def download_caption(id):
         print(id)
         if id.startswith('http'):
             id = extract_youtube_id(id)
-            print(id)
+            # print(id)
 
         # print('Downloading')
         # Create a YouTube object
-        transcript_list = YouTubeTranscriptApi.list_transcripts(id)
-        print(transcript_list)
-        srt = YouTubeTranscriptApi.get_transcript(id, languages=['en', 'zh-TW', 'zh-CN', 'zh-HK'])
-        print(srt)
+
+        # 偵測語言用
+        # transcript_list = YouTubeTranscriptApi.list_transcripts(id)
+        # print(transcript_list)
+
+        srt = YouTubeTranscriptApi.get_transcript(id, languages=['zh-TW', 'zh-HK', 'zh-CN','en'])
+
+        file_path = "/app/tmp/srt-" + id + ".txt"
+        with open(file_path, "w") as file:
+            file.write(str(srt))
         
     except Exception as e:
         raise Exception("Error: ", str(e))

@@ -11,7 +11,9 @@ const getFileListByCreationDate = require('./getFileListByCreationDate.js')
 const NodeCacheSqlite = require('./../../lib/NodeCacheSqlite.js')
 
 const ItemDownloadPathBuilder = require('./ItemDownloadPathBuilder.js')
+const CaptionDownloader = require('./CaptionDownloader/CaptionDownloader.js')
 let nextChannelCount = 0
+
 
 module.exports = async function (items, feedItem = {}) {
 
@@ -98,33 +100,31 @@ module.exports = async function (items, feedItem = {}) {
 
         // ======================
 
-        let result = await ItemDownload(item, feedItem)
-        if (!result) {
+        // let result = await ItemDownload(item, feedItem)
+        // console.log(item)
+        // console.log({url: item.id})
+        item.caption = await CaptionDownloader(item.id, item.description)
+        
+        // console.log(result)
+        // process.exit(0)
+
+        if (!item.caption) {
           console.error([`[UBDownloader] Download failed`, item.url, feedFilename, (new Date().toISOString())].join('\t'))
           continue
         }
-        filteredItems.push(result.item)
+
+        // ======================
+        filteredItems.push(item)
         downloadedCount++
 
         console.log([`[UBDownloader] Download pushed`, item.url, feedFilename, downloadedCount, (new Date().toISOString())].join('\t'))
         
-        if (downloadedCount >= maxItems) {
-          nextChannelCount++
-          console.log([`[DOWNLOAD] Reach maxItems ${maxItems}. Go to next channel.`, feedFilename, nextChannelCount, (new Date().toISOString())].join('\t'))
-          break
-        }
+        // if (downloadedCount >= maxItems) {
+        //   nextChannelCount++
+        //   console.log([`[DOWNLOAD] Reach maxItems ${maxItems}. Go to next channel.`, feedFilename, nextChannelCount, (new Date().toISOString())].join('\t'))
+        //   break
+        // }
 
-        let {cached} = result
-        if (!cached) {
-          notCachedCount++
-
-          if (notCachedCount >= CONFIG.maxDownloadItemPerFeed) {
-            nextChannelCount++
-            console.log([`[DOWNLOAD] Reach max download ${CONFIG.maxDownloadItemPerFeed}. Go to next channel.`, feedFilename, nextChannelCount, (new Date().toISOString())].join('\t'))
-            break
-          }
-        }
-        
         // break
       }
     }
@@ -132,7 +132,7 @@ module.exports = async function (items, feedItem = {}) {
       console.error([e, (new Date().toISOString())].join('\t'))
     }
 
-    await CleanOldItems(feedItem)
+    // await CleanOldItems(feedItem)
 
     clearTimeout(timer)
     // return filteredItems

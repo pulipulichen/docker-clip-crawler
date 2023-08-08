@@ -125,6 +125,17 @@ ${channelDescription}`
       if (item.description) {
         item.description = item.description.trim().split('\\n').join('\n').trim()
       }
+
+      // ----------------------------------------------------------------
+
+      if (item.caption) {
+        item.description = item.description + `
+====
+        
+${item.caption}`
+      }
+
+      // ----------------------------------------------------------------
       
       let thumnails
       if (Array.isArray(item.thumbnails) === true && item.thumbnails.length > 0) {
@@ -143,18 +154,18 @@ ${channelDescription}`
         })
       }
       
-      if (!item.mediaURL && item.audioURL) {
-        item.mediaURL = item.audioURL
-      }
+      // if (!item.mediaURL && item.audioURL) {
+      //   item.mediaURL = item.audioURL
+      // }
       
-      if (!item.MIMEType && item.mediaURL) {
-        if (item.mediaURL.endsWith('.mp3')) {
-          item.MIMEType = 'audio/mpeg'
-        }
-        else if (item.mediaURL.endsWith('.mp4')) {
-          item.MIMEType = 'video/mp4'
-        }
-      }
+      // if (!item.MIMEType && item.mediaURL) {
+      //   if (item.mediaURL.endsWith('.mp3')) {
+      //     item.MIMEType = 'audio/mpeg'
+      //   }
+      //   else if (item.mediaURL.endsWith('.mp4')) {
+      //     item.MIMEType = 'video/mp4'
+      //   }
+      // }
       
       let description = []
       let descriptionHTML = []
@@ -167,13 +178,15 @@ ${channelDescription}`
         descriptionHTML.push(linkifyUrls(item.description.split("\n").join("\n<br />")))
       }
       if (thumnails) {
-        description.push(thumnails)
-        descriptionHTML.push(thumnails)
+        description.unshift(thumnails)
+        descriptionHTML.unshift(thumnails)
       }
+
+      // -----------------------------
       
       let title = item.title
-      let d = moment(item.date).format('M.D')
-      title = '' + d + ']' + title
+      // let d = moment(item.date).format('M.D')
+      // title = '' + d + ']' + title
       
       output.push(`<item>
       <title><![CDATA[${title}]]></title>
@@ -187,9 +200,6 @@ ${channelDescription}`
       </description>
       <content:encoded><![CDATA[<pre>${description.join('<br />\n')}</pre>]]></content:encoded>
       <itunes:image href="${item.thumbnail}"/>
-      <enclosure url="${item.mediaURL}" type="${item.MIMEType}" length="${item.duration}" />
-      <itunes:duration>${item.duration}</itunes:duration>
-      <guid isPermaLink="false">${item.mediaURL}</guid>
       <pubDate>${item.date}</pubDate>
     </item>`)
     }

@@ -1,6 +1,6 @@
 name: Crawler
 on: 
-  # push:
+  push:
   # schedule:
   #   - cron:  "5 0 * * *" # 實際執行時間是這個時間加八小時
   #   - cron:  "5 8 * * *" # 實際執行時間是這個時間加八小時
