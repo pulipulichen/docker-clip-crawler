@@ -113,7 +113,7 @@ let main = async () => {
     console.log(`[${i}/${feedList.length}]`, 'Checking ', feedList[i].title, feedList[i].feedFilename, new Date().toISOString())
     try {
       if (newArrial === false) {
-        UBDownloader(feedList[i])
+        await UBDownloader(feedList[i])
         runnerCount++
         if (runnerCount >= CONFIG.maxDownloadFeed) {
           // console.log('Exit new arrial mode')
@@ -124,7 +124,7 @@ let main = async () => {
       }
       else {
         if (fs.existsSync('/output/' + feedItem.feedFilename + '.rss') === false) {
-          UBDownloader(feedList[i])
+          await UBDownloader(feedList[i])
           runnerCount++
           console.log('new arrial', runnerCount, feedList[i].title, feedList[i].feedFilename)
           if (runnerCount >= CONFIG.newArrialMax) {

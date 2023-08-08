@@ -41,14 +41,6 @@ let feedList = [
     ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
   },
   {
-    title: '動畫小坑谷',
-    feedID: 'valleylife351',
-    homepageURL: 'https://www.youtube.com/channel/UCbCb-ZUoKwQ8vcRbrH2nE0Q',
-    itemFilters: [
-      ItemFiltersPreset.between1minTo10Min,
-    ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
-  },
-  {
     title: '蒼藍鴿聊醫學',
     feedID: 'bluepigeon0810',
     homepageURL: 'https://www.youtube.com/channel/UCUn77_F5A65HViL9OEvIpLw',
