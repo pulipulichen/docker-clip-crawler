@@ -133,7 +133,8 @@ ${channelDescription}`
       // ----------------------------------------------------------------
 
       if (item.caption) {
-        item.description = `${item.caption}
+        item.description = `<hr />
+${item.caption}
 
 ====
 ` + item.description
@@ -143,11 +144,14 @@ ${channelDescription}`
       
       let thumnails
       if (Array.isArray(item.thumbnails) === true && item.thumbnails.length > 0) {
-        thumnails = item.thumbnails.map(url => {
-          return `<img src="${url}" /><br />`
+        thumnails = item.thumbnails.map((url, i) => {
+          if (i === 0) {
+            return `<img src="${url}" /><br />`
+          }
+          return `<img src="${url}" />`
         }).join('\n')
         if (item.link) {
-          thumnails = `<a href="${item.link}">${thumnails}</a>`
+          thumnails = `<a href="${item.link}">${thumnails}</a> <br />`
         }
       }
       
