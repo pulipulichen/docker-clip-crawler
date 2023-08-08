@@ -25,7 +25,7 @@ function CaptionFormat(srt, timeMarkList) {
   // let hasChineseCharacters = false
 
   for (let i = 0; i < srtObject.length; i++) {
-    let {text, start, duration} = srtObject[i]
+    let {text, start, duration, end} = srtObject[i]
     text = text.trim()
     text = SentenceAppendPeriod(text)
 
@@ -39,7 +39,13 @@ function CaptionFormat(srt, timeMarkList) {
       }
         
       sentences = [text]
-      lastEnd = start + duration
+
+      if (end) {
+        lastEnd = end
+      }
+      else {
+        lastEnd = start + duration
+      }
       
       timeMarkList.shift()
       continue
@@ -56,12 +62,25 @@ function CaptionFormat(srt, timeMarkList) {
         paragraphs.push(sentences)
       }
       sentences = [text]
-      lastEnd = start + duration
+
+      if (end) {
+        lastEnd = end
+      }
+      else {
+        lastEnd = start + duration
+      }
+        
       continue
     }
 
     sentences.push(text)
-    lastEnd = start + duration
+    
+    if (end) {
+      lastEnd = end
+    }
+    else {
+      lastEnd = start + duration
+    }
   }
 
   if (sentences.length > 0) {

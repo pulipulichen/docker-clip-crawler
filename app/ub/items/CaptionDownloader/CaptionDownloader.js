@@ -1,15 +1,10 @@
 const NodeCacheSqlite = require('../../../lib/NodeCacheSqlite.js')
-const ShellSpawn = require('../../../lib/ShellSpawn.js')
+const ShellSpawnQueue = require('../../../lib/ShellSpawnQueue.js')
 const CaptionFormat = require('./CaptionFormat.js')
 const UBVideoIdParser = require('./../UBVideoIdParser.js')
 const fs = require('fs')
 
 const TimeMarkAnalysis = require('./TimeMarkAnalysis.js')
-
-let isRunning = false
-let sleep = function (ms = 500) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 // https://youtu.be/85AqJsmxDZs
 module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMarkList = []) {
@@ -21,17 +16,19 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
       if (utID.startsWith('http')) {
         utID = UBVideoIdParser(utID)
       }
-
-      while (isRunning === true) {
-        await sleep(1000)
+      // console.log({utID})
+      if (!utID) {
+        new Error('Invalid UT ID')
       }
 
-      isRunning = true
-      await ShellSpawn([`python3`, `/app/python/caption.py`, utID])
-      isRunning = false
+      await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"${utID}"`])
       let srtPath = `/app/tmp/srt-${utID}.txt`
       if (fs.existsSync(srtPath) === false) {
-        return false
+        await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"${utID}"`])
+
+        if (fs.existsSync(srtPath) === false) {
+          return false
+        }
       }
       let srt = fs.readFileSync(srtPath, 'utf-8')
 
