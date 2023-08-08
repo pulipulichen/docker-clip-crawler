@@ -133,7 +133,8 @@ ${channelDescription}`
       // ----------------------------------------------------------------
 
       if (item.caption) {
-        item.description = `<hr />
+        item.description = `====
+
 ${item.caption}
 
 ====
@@ -151,7 +152,7 @@ ${item.caption}
           return `<img src="${url}" />`
         }).join('\n')
         if (item.link) {
-          thumnails = `<a href="${item.link}">${thumnails}</a> <br />`
+          thumnails = `<a href="${item.link}">${thumnails}</a> <br />\n`
         }
       }
       
