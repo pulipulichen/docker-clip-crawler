@@ -8,7 +8,7 @@ const CalculateParagraphInterval = require('./CalculateParagraphInterval.js')
 function CaptionFormat(srt, timeMarkList = []) {
   // let srtObject = JSON.parse(srt)
   let srtObject = []
-  console.log(srt)
+  // console.log(srt)
   try {
     srtObject = eval(srt)
   }
