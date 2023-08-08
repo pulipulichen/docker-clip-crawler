@@ -14,7 +14,7 @@ module.exports = function () {
   let start = (new Date()).getTime()
   let lastUpdateTime
   let sameTimeCounter = 0
-  let maxSameTime = 2
+  let maxSameTime = 1
   setInterval(() => {
     if (lastUpdateTime !== getUpdateTime()) {
       lastUpdateTime = getUpdateTime()
