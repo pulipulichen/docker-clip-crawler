@@ -17,7 +17,7 @@ def extract_youtube_id(url):
 
 def download_caption(id):
     try:
-        print(id)
+        # print(id)
         if id.startswith('http'):
             id = extract_youtube_id(id)
             # print(id)
@@ -36,7 +36,8 @@ def download_caption(id):
             file.write(str(srt))
         
     except Exception as e:
-        raise Exception("Error: ", str(e))
+        # raise Exception("Error: ", str(e))
+        print("Error: " + str(e))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="YouTube Caption Downloader")

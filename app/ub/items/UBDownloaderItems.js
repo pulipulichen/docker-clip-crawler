@@ -62,7 +62,7 @@ module.exports = async function (items, feedItem = {}) {
           break
         }
 
-        let item = items[i]
+        item = items[i]
 
         item = await AppendUBInfo(item)
         if (!item) {
@@ -108,10 +108,10 @@ module.exports = async function (items, feedItem = {}) {
         // console.log(result)
         // process.exit(0)
 
-        if (!item.caption) {
-          console.error([`[UBDownloader] Download failed`, item.url, feedFilename, (new Date().toISOString())].join('\t'))
-          continue
-        }
+        // if (!item.caption) {
+        //   console.error([`[UBDownloader] Download failed`, item.id, feedFilename, (new Date().toISOString())].join('\t'))
+        //   continue
+        // }
 
         // ======================
         filteredItems.push(item)
