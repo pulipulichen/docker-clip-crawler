@@ -5,10 +5,17 @@ const CalculateParagraphInterval = require('./CalculateParagraphInterval.js')
 
 // let paragraphInterval = 0.02
 
-function CaptionFormat(srt, timeMarkList) {
+function CaptionFormat(srt, timeMarkList = []) {
   // let srtObject = JSON.parse(srt)
   let srtObject = []
-  srtObject = eval(srt)
+  console.log(srt)
+  try {
+    srtObject = eval(srt)
+  }
+  catch (e) {
+    console.log(e)
+    return false
+  }
   // console.log(srtObject)
 
   if (timeMarkList.length > 0) {
@@ -24,7 +31,7 @@ function CaptionFormat(srt, timeMarkList) {
   let lastEnd = false
   // let hasChineseCharacters = false
 
-  if (timeMarkList[0].time === 0) {
+  if (timeMarkList.length > 0 && timeMarkList[0].time === 0) {
     paragraphs.push([`# ${timeMarkList[0].title}`])
     timeMarkList.shift()
   }

@@ -9,7 +9,7 @@
     "down": "docker-compose down",
     "build-up": "docker-compose up --build",
     "bash": "docker-compose run app bash",
-    "lang": "docker-compose run app python3 /app/python/lang.py sknCpWZjfSY",
+    "lang": "docker-compose run app python3 /app/python/lang.py FFWryY3_Pc0",
     "build": "docker-compose build"
   },
   "repository": {

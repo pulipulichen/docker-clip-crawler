@@ -26,6 +26,7 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
 
       await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"https://www.youtube.com/watch?v=${utID}"`])
       let srtPath = `/app/tmp/srt-${utID}.txt`
+      // console.log({srtPath})
       if (fs.existsSync(srtPath) === false) {
         // if (!url) {
         //   url = `https://www.youtube.com/watch?v=${utID}`
@@ -35,17 +36,17 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
         // if (fs.existsSync(srtPath) === false) {
         //   return false
         // }
-
+        console.error([`[CaptionDownloader]`, srtPath, `not found`].join('\t'))
         return false
       }
       let srt = fs.readFileSync(srtPath, 'utf-8')
-
+      // console.log(srt)
       if (Array.isArray(timeMarkList) === false) {
         timeMarkList = TimeMarkAnalysis(timeMarkList)
       }
 
       captionParagraph = CaptionFormat(srt, timeMarkList)
-      // console.log(captionParagraph)
+      // console.log({captionParagraph})
 
       fs.unlinkSync(srtPath)
       fs.writeFileSync(`/app/tmp/GetHTML.txt`, (new Date()).getTime() + '', 'utf8') 

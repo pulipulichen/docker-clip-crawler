@@ -32,6 +32,7 @@ def download_caption(id):
         srt = YouTubeTranscriptApi.get_transcript(id, languages=['zh-Hant', 'zh-TW', 'zh-HK', 'zh-Hans', 'zh-CN', 'zh',  'en-US', 'en'])
 
         file_path = "/app/tmp/srt-" + id + ".txt"
+        # print(file_path)
         with open(file_path, "w") as file:
             file.write(str(srt))
         
