@@ -92,6 +92,11 @@ jobs:
       #     docker network prune -f
       #     docker volume prune -f
 
+      - name: Clean RSS
+        run: |
+          rm -rf ./output/*.rss
+          rm -rf ./output/*.html
+
       # - name: Remove unsubscribe channels
       #   run: |
       #     rm -rf ./output/meisouniv-news-ch_UCiCOKR_WkqZuYN9fpjWqnzg*
