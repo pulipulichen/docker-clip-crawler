@@ -92,11 +92,11 @@ jobs:
       #     docker network prune -f
       #     docker volume prune -f
 
-      - name: Clean RSS
-        run: |
-          rm -rf ./output/*.rss
-          rm -rf ./output/*.html
-          rm -rf ./output/.gitignore
+      # - name: Clean RSS
+      #   run: |
+      #     rm -rf ./output/*.rss
+      #     rm -rf ./output/*.html
+      #     rm -rf ./output/.gitignore
 
       # - name: Remove unsubscribe channels
       #   run: |

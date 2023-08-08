@@ -26,14 +26,14 @@ def download_caption(id):
         # Create a YouTube object
 
         # 偵測語言用
-        # transcript_list = YouTubeTranscriptApi.list_transcripts(id)
-        # print(transcript_list)
+        transcript_list = YouTubeTranscriptApi.list_transcripts(id)
+        print(transcript_list)
 
-        srt = YouTubeTranscriptApi.get_transcript(id, languages=['zh-Hant', 'zh-TW', 'zh-HK', 'zh-Hans', 'zh-CN', 'en'])
+        # srt = YouTubeTranscriptApi.get_transcript(id, languages=['zh-Hant', 'zh-TW', 'zh-HK', 'zh-Hans', 'zh-CN', 'en'])
 
-        file_path = "/app/tmp/srt-" + id + ".txt"
-        with open(file_path, "w") as file:
-            file.write(str(srt))
+        # file_path = "/app/tmp/srt-" + id + ".txt"
+        # with open(file_path, "w") as file:
+        #     file.write(str(srt))
         
     except Exception as e:
         # raise Exception("Error: ", str(e))
