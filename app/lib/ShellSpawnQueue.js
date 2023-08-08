@@ -11,6 +11,7 @@ module.exports = async function (cmdArray, stderrHandler, errorHandler) {
   }
 
   isRunning = true
+  // console.log(cmdArray)
   let result = await ShellSpawn(cmdArray, stderrHandler, errorHandler)
   isRunning = false
 

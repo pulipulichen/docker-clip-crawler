@@ -12,8 +12,10 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
   // expire = 10  // for test
 
   return await NodeCacheSqlite.get('CaptionDownloader', utID, async () => {
+    let url
     try {
       if (utID.startsWith('http')) {
+        url = utID
         utID = UBVideoIdParser(utID)
       }
       // console.log({utID})
@@ -24,11 +26,16 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
       await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"${utID}"`])
       let srtPath = `/app/tmp/srt-${utID}.txt`
       if (fs.existsSync(srtPath) === false) {
-        await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"${utID}"`])
+        // if (!url) {
+        //   url = `https://www.youtube.com/watch?v=${utID}`
+        // }
+        // await ShellSpawnQueue([`python3`, `/app/python/youtube_audio_to_text.py`, `"${url}"`])
 
-        if (fs.existsSync(srtPath) === false) {
-          return false
-        }
+        // if (fs.existsSync(srtPath) === false) {
+        //   return false
+        // }
+
+        return false
       }
       let srt = fs.readFileSync(srtPath, 'utf-8')
 

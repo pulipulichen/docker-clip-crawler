@@ -57,6 +57,7 @@ def youtube_audio_to_text(url):
         # Load the base model and transcribe the audio
         model = whisper.load_model("large", download_root = "/")
         result = model.transcribe("/app/tmp/audio-" + id + ".mp3")
+        
         # transcribed_text = result["text"]
         # print(result["segments"])
         # print(result["language"])
