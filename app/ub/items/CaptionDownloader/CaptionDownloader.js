@@ -9,7 +9,7 @@ const TimeMarkAnalysis = require('./TimeMarkAnalysis.js')
 // https://youtu.be/85AqJsmxDZs
 module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMarkList = []) {
   let expire = 365 * 24 * 60 * 60 * 1000
-  // expire = 10  // for test
+  expire = 10  // for test
 
   return await NodeCacheSqlite.get('CaptionDownloader', utID, async () => {
     let url
@@ -23,7 +23,7 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
         new Error('Invalid UT ID')
       }
 
-      await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"${utID}"`])
+      await ShellSpawnQueue([`python3`, `/app/python/caption.py`, `"https://www.youtube.com/watch?v=${utID}"`])
       let srtPath = `/app/tmp/srt-${utID}.txt`
       if (fs.existsSync(srtPath) === false) {
         // if (!url) {

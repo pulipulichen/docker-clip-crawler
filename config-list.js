@@ -67,12 +67,12 @@ let feedList = [
       ItemFiltersPreset.between3minTo30Min,
     ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
   },
-  {
-    title: '攝徒日記Fun TV',
-    feedID: 'funtv8964',
-    homepageURL: 'https://www.youtube.com/channel/UCvTe3Z7TZsjGzUERx4Ce6zA',
-    itemFilters: ItemFiltersPreset.between3minTo30Min,
-  },
+  // {
+  //   title: '攝徒日記Fun TV',
+  //   feedID: 'funtv8964',
+  //   homepageURL: 'https://www.youtube.com/channel/UCvTe3Z7TZsjGzUERx4Ce6zA',
+  //   itemFilters: ItemFiltersPreset.between3minTo30Min,
+  // },
 ]
 
 
