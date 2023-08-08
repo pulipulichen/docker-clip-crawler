@@ -12,8 +12,14 @@ const TimeMarkAnalysis = function (description) {
       return false
     }
 
-    let title = line.slice(line.indexOf(' ')).trim()
-    let timeString = line.slice(0, line.indexOf(' '))
+    
+    let title = line.replace(pattern, ''); // Removes the pattern
+    let titleFirst = title[0]
+    if (title.startsWith('｜')) {
+      title = title.slice(1)
+    }
+    title = title.trim()
+    let timeString = line.slice(0, line.indexOf(titleFirst))
     let parts = timeString.split(':')
 
     let time = 0
@@ -33,6 +39,6 @@ const TimeMarkAnalysis = function (description) {
   return output
 }
 
-const pattern = /^\d+:\d+\s/;
+const pattern = /^\d+:\d+/;
 
 module.exports = TimeMarkAnalysis;

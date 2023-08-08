@@ -32,7 +32,7 @@ function CaptionFormat(srt, timeMarkList = []) {
   // let hasChineseCharacters = false
 
   if (timeMarkList.length > 0 && timeMarkList[0].time === 0) {
-    paragraphs.push([`# ${timeMarkList[0].title}`])
+    paragraphs.push([`<strong># ${timeMarkList[0].title}</strong>`])
     timeMarkList.shift()
   }
 
@@ -50,7 +50,7 @@ function CaptionFormat(srt, timeMarkList = []) {
         paragraphs.push(sentences)
       }
 
-      paragraphs.push([`# ${timeMarkList[0].title}`])
+      paragraphs.push([`<strong># ${timeMarkList[0].title}</strong>`])
         
       sentences = [text]
 

@@ -44,6 +44,7 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
       if (Array.isArray(timeMarkList) === false) {
         timeMarkList = TimeMarkAnalysis(timeMarkList)
       }
+      // console.log({timeMarkList})
 
       captionParagraph = CaptionFormat(srt, timeMarkList)
       // console.log({captionParagraph})
@@ -53,6 +54,7 @@ module.exports = async function (utID = 'https://youtu.be/JxbFotMgqik', timeMark
       return captionParagraph
     }
     catch (e) {
+      console.error(e)
       return false
     }
   }, expire)
