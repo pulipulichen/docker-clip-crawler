@@ -101,7 +101,7 @@ jobs:
 
       - name: Check Cache Size Before
         run: |
-          ls -lh ./cache/*.sqlite
+          ls -lh ./cache/*.sqlite 2> /dev/null
 
       - name: Output Calculate Before
         run: |
@@ -133,7 +133,7 @@ jobs:
 
       - name: Check Cache Size After
         run: |
-          ls -lh ./cache/*.sqlite
+          ls -lh ./cache/*.sqlite 2> /dev/null
 
       - name: Output Calculate After
         run: |

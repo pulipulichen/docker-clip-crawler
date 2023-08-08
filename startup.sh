@@ -2,7 +2,7 @@
 
 # chmod -R 777 /output/*
 
-ls -lh /cache/*.sqlite
+ls -lh /cache/*.sqlite 2> /dev/null
 
 # tor --version
 # service tor start
