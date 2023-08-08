@@ -24,6 +24,11 @@ function CaptionFormat(srt, timeMarkList) {
   let lastEnd = false
   // let hasChineseCharacters = false
 
+  if (timeMarkList[0].time === 0) {
+    paragraphs.push([`# ${timeMarkList[0].title}`])
+    timeMarkList.shift()
+  }
+
   for (let i = 0; i < srtObject.length; i++) {
     let {text, start, duration, end} = srtObject[i]
     text = text.trim()
@@ -33,10 +38,12 @@ function CaptionFormat(srt, timeMarkList) {
     //   hasChineseCharacters = true
     // }
     // console.log(timeMarkList.length, start, timeMarkList[0])
-    if (timeMarkList.length > 0 && start > timeMarkList[0]) {
+    if (timeMarkList.length > 0 && start > timeMarkList[0].time) {
       if (sentences.length > 0) {
         paragraphs.push(sentences)
       }
+
+      paragraphs.push([`# ${timeMarkList[0].title}`])
         
       sentences = [text]
 

@@ -133,10 +133,10 @@ ${channelDescription}`
       // ----------------------------------------------------------------
 
       if (item.caption) {
-        item.description = item.description + `
+        item.description = `${item.caption}
+
 ====
-        
-${item.caption}`
+` + item.description
       }
 
       // ----------------------------------------------------------------

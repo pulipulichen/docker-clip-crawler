@@ -12,6 +12,7 @@ const TimeMarkAnalysis = function (description) {
       return false
     }
 
+    let title = line.slice(line.indexOf(' ')).trim()
     let timeString = line.slice(0, line.indexOf(' '))
     let parts = timeString.split(':')
 
@@ -20,9 +21,12 @@ const TimeMarkAnalysis = function (description) {
       time = time + (Number(part) * (60 ** i))
     })
 
-    if (time > 0) {
-      output.push(time)
-    }
+    // if (time > 0) {
+      output.push({
+        time,
+        title
+      })
+    // }
   })
 
   // console.log({output})
