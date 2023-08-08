@@ -184,7 +184,7 @@ ${item.caption}`
 
       // -----------------------------
       
-      let title = item.title
+      let title = item.title + '[YT+]'
       // let d = moment(item.date).format('M.D')
       // title = '' + d + ']' + title
       
