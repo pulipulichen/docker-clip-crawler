@@ -15,7 +15,7 @@ module.exports = function () {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>ACTION-UT-PODCAST</title>
+  <title>ACTION-RSS-UT</title>
 </head>
 <body>
 <ol>

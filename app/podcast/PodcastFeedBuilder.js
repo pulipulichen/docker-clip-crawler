@@ -7,6 +7,10 @@ const CONFIG = require('./../../config.js')
 module.exports = async function (options) {
   let output = []
   
+  if (options.title) {
+    options.title = options.title + '[YT+]'
+  }
+
   if (!options.author) {
     options.author = options.title
   }
@@ -184,7 +188,7 @@ ${item.caption}`
 
       // -----------------------------
       
-      let title = item.title + '[YT+]'
+      let title = item.title
       // let d = moment(item.date).format('M.D')
       // title = '' + d + ']' + title
       
