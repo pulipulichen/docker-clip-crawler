@@ -49,13 +49,21 @@ let feedList = [
     ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
   },
   {
-      title: '老阿貝聊AI繪圖',
-      feedID: 'laoabe',
-      homepageURL: 'https://www.youtube.com/channel/UCq0cd_ZAT08f3_nCL5goHcg',
-      itemFilters: [
-        ItemFiltersPreset.between3minTo30Min,
-      ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
-    },
+    title: '老阿貝聊AI繪圖',
+    feedID: 'laoabe',
+    homepageURL: 'https://www.youtube.com/channel/UCq0cd_ZAT08f3_nCL5goHcg',
+    itemFilters: [
+      ItemFiltersPreset.between3minTo30Min,
+    ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
+  },
+  {
+    title: '番茄没有酱聊AI繪圖',
+    feedID: 'lsm0315',
+    homepageURL: 'https://www.youtube.com/channel/UCoYbSADuNZvm99BLxqtImYQ',
+    itemFilters: [
+      ItemFiltersPreset.between3minTo30Min,
+    ] // 霸道總裁攀岩開會、網紅天天搞小團體...《絕世網紅》劇情超浮誇？《 志祺今天不讀稿 》EP010｜志祺七七
+  },
 ]
 
 
