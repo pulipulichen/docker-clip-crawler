@@ -160,12 +160,12 @@ let feedList = [
     homepageURL: 'https://www.youtube.com/channel/UCdEpz2A4DzV__4C1x2quKLw',
     itemFilters: ItemFiltersPreset.between3minTo30Min,
   },
-  {
-    title: '想做教育家的Klaus',
-    feedID: 'klaus6510',
-    homepageURL: 'https://www.youtube.com/channel/UCZ4NwvuGYgFyjnRRJekdnHw',
-    itemFilters: ItemFiltersPreset.between3minTo30Min,
-  },
+  // {
+  //   title: '想做教育家的Klaus',
+  //   feedID: 'klaus6510',
+  //   homepageURL: 'https://www.youtube.com/channel/UCZ4NwvuGYgFyjnRRJekdnHw',
+  //   itemFilters: ItemFiltersPreset.between3minTo30Min,
+  // },
   {
     title: '老孫聊遊戲',
     feedID: 'oldsungame',
