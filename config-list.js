@@ -260,6 +260,12 @@ let feedList = [
     homepageURL: 'https://www.youtube.com/channel/UCIFqfMtBfNsYGBz3uNd9UAw',
     itemFilters: ItemFiltersPreset.between3minTo30Min,
   },
+  {
+    title: '彼得森評3C',
+    feedID: 'Petersun',
+    homepageURL: 'https://www.youtube.com/channel/UCl9BPXjyEmA0q6IrQvsEazA',
+    itemFilters: ItemFiltersPreset.between3minTo30Min,
+  },
 ]
 
 // feedList = [
