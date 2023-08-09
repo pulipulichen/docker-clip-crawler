@@ -133,12 +133,14 @@ ${channelDescription}`
       // ----------------------------------------------------------------
 
       if (item.caption) {
-        item.description = `====
+        item.description = `<hr style="clear:both" />
+====
 
 ${item.caption}
 
+<hr style="clear:both" />
 ====
-` + item.description
+` + item.description.split('\n').map(line => `<p>${line}</p>`).join('')
       }
 
       // ----------------------------------------------------------------
@@ -147,12 +149,12 @@ ${item.caption}
       if (Array.isArray(item.thumbnails) === true && item.thumbnails.length > 0) {
         thumnails = item.thumbnails.map((url, i) => {
           if (i === 0) {
-            return `<img src="${url}" /><br />`
+            return `<p><a href="${item.link}"><img src="${url}" /></a></p><br /><p style="clear: both">`
           }
-          return `<img src="${url}" />`
-        }).join('\n')
+          return `<a href="${item.link}"><img src="${url}" /></a>`
+        }).join('')
         if (item.link) {
-          thumnails = `<a href="${item.link}">${thumnails}</a> <br />\n`
+          thumnails = `${thumnails}</p>`
         }
       }
       
@@ -207,7 +209,7 @@ ${item.caption}
       <description>
         <![CDATA[${description.join('\n')}]]>
       </description>
-      <content:encoded><![CDATA[<pre>${description.join('<br />\n')}</pre>]]></content:encoded>
+      <content:encoded><![CDATA[${description.join('<br />\n')}]]></content:encoded>
       <itunes:image href="${item.thumbnail}"/>
       <pubDate>${item.date}</pubDate>
     </item>`)

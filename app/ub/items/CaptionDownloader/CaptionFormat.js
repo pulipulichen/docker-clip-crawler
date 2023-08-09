@@ -125,9 +125,9 @@ function CaptionFormat(srt, timeMarkList = []) {
   // 合併
   // console.log('Count paragraphs', output.length)
   return output.map (sentences => {
-    // return '<p>' + sentences.join('').trim() + '</p>'
-    return sentences.join('').trim()
-  }).join('\n\n')
+    return '<p style="max-width: calc(100vw - 1rem);  word-wrap: break-word; overflow-wrap: break-word; ">' + sentences.join('').trim() + '</p>'
+    // return sentences.join('').trim()
+  }).join('')
 }
 
 function splitArray(array, split = 3) {
