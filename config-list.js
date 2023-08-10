@@ -266,6 +266,12 @@ let feedList = [
     homepageURL: 'https://www.youtube.com/channel/UCl9BPXjyEmA0q6IrQvsEazA',
     itemFilters: ItemFiltersPreset.between3minTo30Min,
   },
+  {
+    title: '好機車',
+    feedID: 'HOWGG',
+    homepageURL: 'https://www.youtube.com/channel/UCZzu2JGOMNNz-UYZ7TERDNg',
+    itemFilters: ItemFiltersPreset.between3minTo30Min,
+  },
 ]
 
 // feedList = [
