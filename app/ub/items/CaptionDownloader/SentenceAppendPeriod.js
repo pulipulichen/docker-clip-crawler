@@ -10,7 +10,7 @@ function endsWithList(str, suffixList) {
 }
 
 function SentenceAppendPeriod(sentence) {
-  if (endsWithList(sentence, ['.', ';', '?', '!', '"', "'", '。', '！', '？']) === false) {
+  if (endsWithList(sentence, ['.', ';', '?', '!', '"', "'", '，', '、', '&', '@', '。', '！', '？']) === false) {
     if (containsChineseCharacters(sentence)) {
       sentence += '。'
     }  
