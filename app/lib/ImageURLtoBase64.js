@@ -1,6 +1,7 @@
 const request = require('request');
+const NodeCacheSqlite = require('./NodeCacheSqlite.js')
 
-module.exports = function (imageUrl) {
+let ImageURLtoBase64 = function (imageUrl) {
   if (!imageUrl) {
     return ''
   }
@@ -24,3 +25,9 @@ module.exports = function (imageUrl) {
     
 }
 
+
+// let ImageURLtoBase64Cache = function (imageUrl) {
+
+// }
+
+module.exports = ImageURLtoBase64
