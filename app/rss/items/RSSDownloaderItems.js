@@ -36,7 +36,7 @@ module.exports = async function (items, feedItem = {}) {
 
   // -------------
 
-  // let folder = `/output/${feedFilename}/`
+  // let folderc = `/output/${feedFilename}/`
   let filteredItems = []
   let count = items.length
   // if (count > maxItems) {
