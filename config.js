@@ -6,7 +6,7 @@ let CONFIG = {
   publicURL: `https://democwise2016.github.io/action-RSS-FB-Feed/`,
   publicURLShorten: `https://ppt.cc/f6Ddzx`,
   thumbnailBorderColor: 'CC3333',
-  titleAppend: '[FB+] 20230826-1843',
+  titleAppend: '[FB+] 20230826-1844',
 
   maxDownloadItemPerFeed: 50,
   maxDownloadFeed: 50,

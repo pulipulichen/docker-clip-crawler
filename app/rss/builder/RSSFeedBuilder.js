@@ -219,6 +219,7 @@ ${item.caption}
       </description>
       <content:encoded><![CDATA[${description.join('<br />\n')}]]></content:encoded>
       <itunes:image href="${item.thumbnail}"/>
+      <media:content url="${item.thumbnail}" medium="image"/>
       <pubDate>${item.date}</pubDate>
     </item>`)
     }

@@ -14,7 +14,7 @@ module.exports = function () {
   let start = (new Date()).getTime()
   let lastUpdateTime
   let sameTimeCounter = 0
-  let maxSameTime = 3
+  let maxSameTime = 2
   setInterval(() => {
     if (lastUpdateTime !== getUpdateTime()) {
       lastUpdateTime = getUpdateTime()
@@ -31,5 +31,5 @@ module.exports = function () {
 
     let interval = Math.floor(((new Date()).getTime() - start) / 60 / 1000)
     console.log([`[WAKE] `, `${interval}/${CONFIG.maxExcutionMinutes}`, sameTimeCounter, (new Date().toISOString())].join('\t'))
-  }, 30 * 1000)
+  }, 15 * 1000)
 }
