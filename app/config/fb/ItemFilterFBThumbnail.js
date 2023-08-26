@@ -1,5 +1,5 @@
 const he = require('he');
-const ImageURLtoBase64 = require('./../../lib/ImageURLtoBase64.js');
+const FileCache = require('./../../file-cache/FileCache.js');
 
 let main = async function (item, rss) {
   // console.log(item)
@@ -22,7 +22,7 @@ let main = async function (item, rss) {
   
   let imgURL = content.slice(startPos, content.indexOf('"', startPos + 1))
   imgURL = he.decode(imgURL)
-  imgURL = await ImageURLtoBase64(imgURL)
+  imgURL = await FileCache(imgURL)
   // console.log(imgURL, startPos, content.indexOf('"', startPos + 1))
 
   item.thumbnail = imgURL

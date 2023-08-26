@@ -1,5 +1,5 @@
 const cheerio = require('cheerio')
-const ImageURLtoBase64 = require('./../../lib/ImageURLtoBase64.js');
+const FileCache = require('./../../file-cache/FileCache.js');
 
 let main = async function (item, rss) {
   let content = item.content
@@ -10,7 +10,7 @@ let main = async function (item, rss) {
     let img = imgList.eq(i)
     let src = img.attr('src')
     try {
-      let imgurURL = await ImageURLtoBase64(src)
+      let imgurURL = await FileCache(src)
       //console.log('cImgur', src, imgurURL)
       img.attr('src', imgurURL)
     } catch (e) {
