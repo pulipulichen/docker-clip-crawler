@@ -10,6 +10,8 @@ function generateMD5Hash(inputString) {
 }
 
 module.exports = function (url) {
+  // console.trace('url', url)
+
   let queryData = URL.parse(url, true)
   // console.log(queryData)
   // if (queryData.channel_id) {
@@ -29,8 +31,16 @@ module.exports = function (url) {
   const filenameWithQuery = path.basename(parsedUrl.pathname); // This gets "image.jpg?width=800&height=600"
   const filenameWithoutQuery = filenameWithQuery.split('?')[0]; // This removes the query part
 
-  const extension = path.extname(filenameWithoutQuery);
-
+  let extension = path.extname(filenameWithoutQuery);
+  if (extension === '' || extension === '.php') {
+    let extList = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
+    for (let i = 0; i < extList.length; i++) {
+      if (url.indexOf(extList[i]) > -1) {
+        extension = extList[i]
+        break
+      }
+    }  
+  }
 
   return host + '-' + md5Hash.slice(0, 10) + extension
 }

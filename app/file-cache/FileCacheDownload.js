@@ -1,30 +1,32 @@
+const axios = require('axios');
 const fs = require('fs');
-const http = require('http'); // Use 'http' for HTTP URLs
-const https = require('https'); // Use 'http' for HTTP URLs
+const path = require('path');
 
-function FileCacheDownload(url, outputPath) {
-    const file = fs.createWriteStream(outputPath);
+async function FileCacheDownload(url, outputPath, options = {}) {
+  try {
+    const imageUrl = url
+    const outputFilePath = outputPath
 
-    let protocol = https
-    if (url.startsWith('http://')) {
-      protocol = http
+    let headers = {}
+
+    let {referer} = options
+
+    if (referer) {
+      headers.Referer = referer
     }
 
+    const response = await axios.get(imageUrl, { headers, responseType: 'stream' });
+
+    const writer = fs.createWriteStream(outputFilePath);
+    response.data.pipe(writer);
 
     return new Promise((resolve, reject) => {
-      protocol.get(url, (response) => {
-          response.pipe(file);
-
-          file.on('finish', () => {
-              file.close();
-              // console.log('File downloaded and saved:', outputPath);
-              resolve(outputPath)
-          });
-      }).on('error', (error) => {
-          // console.error('Error downloading the file:', error);
-          reject(error)
-      });
-    })
+      writer.on('finish', resolve);
+      writer.on('error', reject);
+    });
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
 }
 
 module.exports = FileCacheDownload

@@ -3,7 +3,7 @@ const FileCache = require('./../../file-cache/FileCache.js');
 
 const he = require('he');
 
-let main = async function (item, rss) {
+let main = async function (item, options = {}) {
   let content = item.content
   const $ = cheerio.load(content)
   
@@ -11,8 +11,12 @@ let main = async function (item, rss) {
   for (let i = 0; i < imgList.length; i++) {
     let img = imgList.eq(i)
     let src = img.attr('src')
+    // console.log(src)
+    if (src === '') {
+      continue
+    }
     try {
-      let imgurURL = await FileCache(src)
+      let imgurURL = await FileCache(src, options)
       //console.log('cImgur', src, imgurURL)
       // imgurURL = he.encode(imgurURL)
       // console.log(imageURL)

@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const MAX_FILES = 1000
+const CONFIG = require('./../../config-json.js')
+
+const MAX_FILES = CONFIG.maxFileCache
 const directoryPath = '/output/file-cache/';
 
 const FileCacheClean = function () {

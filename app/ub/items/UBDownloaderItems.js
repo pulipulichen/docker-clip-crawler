@@ -1,7 +1,7 @@
 const AppendUBInfo = require('./AppendUBInfo.js')
 const ItemDownload = require('./ItemDownload.js')
 const CleanOldItems = require('./CleanOldItems.js')
-const CONFIG = require('./../../../config.js')
+const CONFIG = require('./../../../config-json.js')
 
 let startTimer = false
 let maxExcutionMS = CONFIG.maxExcutionMinutes * 60 * 1000

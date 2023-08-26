@@ -1,5 +1,5 @@
 const ItemDownload = require('./ItemDownload.js')
-const CONFIG = require('../../../config.js')
+const CONFIG = require('../../../config-json.js')
 
 let startTimer = false
 let maxExcutionMS = CONFIG.maxExcutionMinutes * 60 * 1000
@@ -68,13 +68,13 @@ module.exports = async function (items, feedItem = {}) {
 
         let passed = true
         for (let j = 0; j < itemFilters.length; j++) {
-          if (await itemFilters[j](item) === false) {
+          if (await itemFilters[j](item, options) === false) {
             passed = false
             break
           }
         }
         if (passed === false) {
-          console.log([`[RSSDownloaderItems] Not paassed`, `https://www.youtube.com/watch?v=${item.id}`, feedFilename, (new Date().toISOString())].join('\t'))
+          console.log([`[RSSDownloaderItems] Not paassed`, item.link, feedFilename, (new Date().toISOString())].join('\t'))
           continue
         }
  

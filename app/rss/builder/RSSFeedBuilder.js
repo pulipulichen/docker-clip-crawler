@@ -130,9 +130,6 @@ module.exports = async function (options) {
 
 ${channelDescription}`
       }
-      else if (item.link && item.description.startsWith(item.link) === false) {
-        item.description = item.link + '\n' + item.description
-      }
       
       if (item.description) {
         item.description = item.description.trim().split('\\n').join('\n').trim()
@@ -209,6 +206,7 @@ ${item.caption}
       
       output.push(`<item>
       <title><![CDATA[${title}]]></title>
+      <link>${item.link}></link>
       <itunes:title><![CDATA[${title}]]></itunes:title>
       <itunes:author><![CDATA[${item.author}]]></itunes:author>
       <itunes:summary>

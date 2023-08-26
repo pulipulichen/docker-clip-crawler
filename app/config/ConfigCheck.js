@@ -8,6 +8,10 @@ module.exports = function (CONFIG) {
 
   for (let i = 0; i < CONFIG.feedList.length; i++) {
     let feedItem = CONFIG.feedList[i]
+
+    if (CONFIG.idAppend) {
+      feedID = CONFIG.idAppend + '-' + feedID
+    }
   
     if (!feedItem.feedURL && feedItem.homepageURL) {
       if (feedItem.homepageURL.startsWith('https://www.youtube.com/channel/')) {

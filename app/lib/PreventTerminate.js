@@ -1,6 +1,6 @@
 // const EventEmitter = require('events');
 
-const CONFIG = require('./../../config.js')
+const CONFIG = require('./../../config-json.js')
 const fs = require('fs')
 
 function getUpdateTime () {
@@ -14,7 +14,7 @@ module.exports = function () {
   let start = (new Date()).getTime()
   let lastUpdateTime
   let sameTimeCounter = 0
-  let maxSameTime = 2
+  let maxSameTime = 3
   setInterval(() => {
     if (lastUpdateTime !== getUpdateTime()) {
       lastUpdateTime = getUpdateTime()

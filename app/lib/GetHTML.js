@@ -57,7 +57,7 @@ async function GetHTML (url, options = {}) {
   let {
     cacheDay = 0.5, 
     encoding = null,
-    crawler = 'puppeteer', // fetch or puppeteer or xml
+    crawler = 'fetch', // fetch or puppeteer or xml
     puppeteerArgs = ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=800,600'],
     puppeteerAgent,
     // puppeteerWaitUntil = `networkidle2`,
@@ -69,7 +69,7 @@ async function GetHTML (url, options = {}) {
     timeout = 2 * 60 * 1000
   } = options
 
-  crawler = 'fetch'
+  // crawler = 'fetch'
 
   if (TorController.isStarted()) {
     puppeteerArgs.push('--proxy-server=socks5://127.0.0.1:9050')

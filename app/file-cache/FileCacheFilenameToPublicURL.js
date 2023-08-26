@@ -1,7 +1,7 @@
 
-// const CONFIG = require('./../../config.js')
-const path = require('path')
-const publicURL = `https://democwise2016.github.io/action-RSS-FB-Feed`
+const CONFIG = require('./../../config-json.js')
+// const path = require('path')
+const publicURL = CONFIG.publicURL
 
 const FileCacheFilenameToPublicURL = function (filename) {
   // console.log(filename)
@@ -10,7 +10,7 @@ const FileCacheFilenameToPublicURL = function (filename) {
   // if (!publicURL) {
   //   return false
   // }
-  return publicURL + '/file-cache/' + filename
+  return publicURL + 'file-cache/' + filename
 }
 
 module.exports = FileCacheFilenameToPublicURL

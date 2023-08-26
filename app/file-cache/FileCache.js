@@ -9,8 +9,11 @@ const FileCacheFilenameToPublicURL = require('./FileCacheFilenameToPublicURL.js'
 const fs = require('fs')
 const path = require('path')
 
-const FileCache = async function (url) {
-  
+const FileCache = async function (url, options = {}) {
+   if (!url || url === '') {
+    return ''
+   }
+
   let filename = FileCacheURLtoFilename(url)
   FileCacheMkdir()
 
@@ -19,8 +22,11 @@ const FileCache = async function (url) {
     return FileCacheFilenameToPublicURL(filename)
   }
 
-  await FileCacheDownload(url, cachePath)
+  fs.writeFileSync(`/app/tmp/GetHTML.txt`, (new Date()).getTime() + '', 'utf8') 
+  await FileCacheDownload(url, cachePath, options)
+  fs.writeFileSync(`/app/tmp/GetHTML.txt`, (new Date()).getTime() + '', 'utf8') 
   FileCacheClean()
+  fs.writeFileSync(`/app/tmp/GetHTML.txt`, (new Date()).getTime() + '', 'utf8') 
 
   return FileCacheFilenameToPublicURL(filename)
 }
