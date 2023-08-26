@@ -1,4 +1,4 @@
-const UBDownloader = require('./ub/UBDownloader.js')
+const RSSDownloader = require('./rss/RSSDownloader.js')
 const FeedIndexBuilder = require('./podcast/FeedIndexBuilder.js')
 const CONFIG = require('./../config.js')
 const fs = require('fs')
@@ -92,7 +92,7 @@ let main = async () => {
   let runnerCount = 0
 
   let ranI = []
-
+    
   // https://www.youtube.com/@LINETODAYWORLD
   for (let currentIndex = startIndex; currentIndex < startIndex + CONFIG.maxDownloadFeed; currentIndex++) {
     let i = currentIndex % feedList.length
@@ -113,7 +113,8 @@ let main = async () => {
     console.log(`[${i}/${feedList.length}]`, 'Checking ', feedList[i].title, feedList[i].feedFilename, new Date().toISOString())
     try {
       if (newArrial === false) {
-        await UBDownloader(feedList[i])
+        // await UBDownloader(feedList[i])
+        await RSSDownloader(feedList[i])
         runnerCount++
         if (runnerCount >= CONFIG.maxDownloadFeed) {
           // console.log('Exit new arrial mode')
@@ -124,7 +125,8 @@ let main = async () => {
       }
       else {
         if (fs.existsSync('/output/' + feedItem.feedFilename + '.rss') === false) {
-          await UBDownloader(feedList[i])
+          // await UBDownloader(feedList[i])
+          await RSSDownloader(feedList[i])
           runnerCount++
           console.log('new arrial', runnerCount, feedList[i].title, feedList[i].feedFilename)
           if (runnerCount >= CONFIG.newArrialMax) {

@@ -1,4 +1,4 @@
-const ParseRSSID = require('./../rss/ParseRSSID.js')
+const ParseUBID = require('./../ub/ParseUBID.js')
 
 module.exports = function (feedItem = {}) {
   let {
@@ -6,7 +6,7 @@ module.exports = function (feedItem = {}) {
     feedURL
   } = feedItem
 
-  let filename = ParseRSSID(feedURL)
+  let filename = ParseUBID(feedURL)
   if (feedID) {
     filename = feedID + '-' + filename
   }

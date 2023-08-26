@@ -1,6 +1,17 @@
-const ItemFiltersPreset = require('./app/config/ItemFiltersPreset.js')
+const ItemFilters = require('./app/config/ItemFilters.js')
 
 let feedList = [
+  {
+    title: '原價屋coolpc on Facebook',
+    feedID: 'coolpc-fb',
+    feedURL: 'http://fetchrss.com/rss/5f999158644572630d2ebfc3622425f7b21ecd56f6380533.xml',
+    itemFilters: [
+      ItemFilters['fb'].ItemFilterFBTitle,
+      ItemFilters['fb'].ItemFilterFBThumbnail,
+      ItemFilters['common'].ItemFilterImageEmbed,
+      ItemFilters['sites'].ItemFilterFBCoolPC
+    ],
+  },
 ]
 
 // feedList = [
