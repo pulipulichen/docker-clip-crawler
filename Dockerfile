@@ -1,6 +1,6 @@
-FROM pudding/github-action-app:puppeteer-python-14-20230804-0332
+FROM pudding/github-action-app:puppeteer-python-14-action-rss-20230826-1641
 
-RUN npm link he@1.2.0
+
 
 #RUN pip install youtube_transcript_api
 

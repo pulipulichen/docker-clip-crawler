@@ -1,7 +1,7 @@
 const fs = require('fs')
-const ParseUBID = require('./../ub/ParseUBID.js')
+const ParseUBID = require('../ub/ParseUBID.js')
 const CONFIG = require('../../config.js')
-const OutputFeedFilenameBuilder = require('./OutputFeedFilenameBuilder.js')
+const OutputFeedFilenameBuilder = require('../podcast/OutputFeedFilenameBuilder.js')
 
 module.exports = function () {
   let {publicURL, feedList} = CONFIG
@@ -15,7 +15,7 @@ module.exports = function () {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>ACTION-RSS-UT</title>
+  <title>ACTION-RSS-FB-Feed</title>
 </head>
 <body>
 <ol>

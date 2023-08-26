@@ -3,7 +3,7 @@ const ConfigCheck = require('./app/config/ConfigCheck.js')
 const feedList = require('./config-list.js')
 
 let CONFIG = {
-  publicURL: `https://democwise2016.github.io/action-RSS-UT/`,
+  publicURL: `https://democwise2016.github.io/action-RSS-FB-Feed/`,
   publicURLShorten: `https://ppt.cc/f6Ddzx`,
   thumbnailBorderColor: 'CC3333',
 

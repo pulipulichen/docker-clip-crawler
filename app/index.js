@@ -1,5 +1,5 @@
 const RSSDownloader = require('./rss/RSSDownloader.js')
-const FeedIndexBuilder = require('./podcast/FeedIndexBuilder.js')
+const FeedIndexBuilder = require('./rss/FeedIndexBuilder.js')
 const CONFIG = require('./../config.js')
 const fs = require('fs')
 

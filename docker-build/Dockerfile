@@ -121,3 +121,4 @@ RUN apt-get install -y tor
 
 
 RUN npm link he@1.2.0
+RUN npm link mime-types@2.1.35

@@ -8,7 +8,7 @@ module.exports = async function (options) {
   let output = []
   
   if (options.title) {
-    options.title = options.title + '[YT+]'
+    options.title = options.title + '[FB+]'
   }
 
   if (!options.author) {
