@@ -4,6 +4,6 @@
 - https://hub.docker.com/
 - `docker image ls | head` 找出合適的名稱，例如「html-webpage-dashboard_app」
 - 建立合適的repo https://hub.docker.com/
-- `docker tag action-rss-ut-app pudding/github-action-app:puppeteer-python-14-action-rss-ut-20230808-2240`
-- `docker push pudding/github-action-app:puppeteer-python-14-action-rss-ut-20230808-2240`
-- 修改docker-compose.yaml `image: pudding/github-action-app:puppeteer-python-14-action-rss-ut-20230808-2240`
+- `docker tag action-rss-ut-app pudding/github-action-app:puppeteer-python-14-action-rss-20230826-1639`
+- `docker push pudding/github-action-app:puppeteer-python-14-action-rss-20230826-1639`
+- 修改docker-compose.yaml `image: pudding/github-action-app:puppeteer-python-14-action-rss-20230826-1639`

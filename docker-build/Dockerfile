@@ -118,3 +118,6 @@ RUN pip install pytube
 
 RUN apt-get install -y tor
 # RUN tor --version
+
+
+RUN npm link he@1.2.0
