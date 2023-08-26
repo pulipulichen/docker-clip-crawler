@@ -2,8 +2,8 @@ const ItemFilters = require('./app/config/ItemFilters.js')
 
 let feedList = [
   {
-    title: '原價屋coolpc on Facebook 20230826-1837 ',
-    feedID: 'test-20230826-1831-coolpc-fb',
+    title: '原價屋coolpc on Facebook',
+    feedID: 'test-20230826-1834-coolpc-fb',
     feedURL: 'http://fetchrss.com/rss/5f999158644572630d2ebfc3622425f7b21ecd56f6380533.xml',
     itemFilters: [
       ItemFilters['fb'].ItemFilterFBTitle,

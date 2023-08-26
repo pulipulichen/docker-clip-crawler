@@ -8,7 +8,7 @@ module.exports = async function (options) {
   let output = []
   
   if (options.title) {
-    options.title = options.title + '[FB+]'
+    options.title = options.title + CONFIG.titleAppend
   }
 
   if (!options.author) {
