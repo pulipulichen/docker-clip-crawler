@@ -9,9 +9,14 @@ const FileCacheFilenameToPublicURL = require('./FileCacheFilenameToPublicURL.js'
 const fs = require('fs')
 const path = require('path')
 
+const CONFIG = require('./../../config-json.js')
+
 const FileCache = async function (url, options = {}) {
    if (!url || url === '') {
     return ''
+   }
+   if (url.startsWith(CONFIG.publicURL)) {
+    return url
    }
 
   let filename = FileCacheURLtoFilename(url)

@@ -3,6 +3,8 @@ const FileCache = require('./../../file-cache/FileCache.js');
 
 const he = require('he');
 
+const ItemFilterThumbnailCache = require('./ItemFilterThumbnailCache.js')
+
 let main = async function (item, options = {}) {
   let content = item.content
   const $ = cheerio.load(content)
@@ -30,6 +32,8 @@ let main = async function (item, options = {}) {
   
   content = $('body').html()
   item.content = content
+
+  item = await ItemFilterThumbnailCache(item)
 
   return item
 }

@@ -18,8 +18,33 @@ const main = function ($) {
 
     // console.log(image.attr('data-lazy-src'))
     let src = image.attr('src')
-    src = src.slice(18, src.indexOf('?')).trim()
-    src = 'https://' + src
+    if (src.startsWith('https://i0.wp.com/')) {
+      src = src.slice(18).trim()
+      if (src.indexOf('?') > -1) {
+        src = src.slice(0, src.indexOf('?')).trim()
+      }
+      src = 'https://' + src
+    }
+    image.attr('src', src)
+    image.removeAttr('fetchpriority')
+    image.removeAttr('data-lazy-srcset')
+    image.removeAttr('data-lazy-sizes')
+    image.removeAttr('data-recalc-dims')
+  }
+
+  images = $.find('img[src^="https://i1.wp.com/"]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('src')
+    if (src.startsWith('https://i1.wp.com/')) {
+      src = src.slice(18).trim()
+      if (src.indexOf('?') > -1) {
+        src = src.slice(0, src.indexOf('?')).trim()
+      }
+      src = 'https://' + src
+    }
     image.attr('src', src)
     image.removeAttr('fetchpriority')
     image.removeAttr('data-lazy-srcset')

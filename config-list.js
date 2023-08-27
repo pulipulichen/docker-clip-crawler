@@ -387,12 +387,40 @@ let feedList = [
       selector: 'article > .entry-content'
     }
   },
+  { // <outline type="rss" text="FUNTOP資訊網++$0414-1925$" title="FUNTOP資訊網++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffuntop.tw%2Ffeed%2F" htmlUrl="https://funtop.tw/"/>
+    title: 'FUNTOP資訊網',
+    feedID: 'funtop',
+    feedURL: 'https://funtop.tw/feed/',
+    thumbnail: 'https://funtop.tw/wp-content/themes/funtop/img/favicon.ico?ver=1',
+    itemFilters: [
+      ItemFilters['sites'].ItemFilterBlog,
+      ItemFilters['sites'].ItemFilterFuntop,
+      // ItemFilters['common'].ItemFilterImageEmbed,
+    ],
+    options: {
+      selector: 'article[id]'
+    }
+  },
 ]
 
 // ----------------------------------------------------------------
 
 // feedList = [
   
+//   { // <outline type="rss" text="Yahoo News HK Original content++$1203-0650$" title="Yahoo News HK Original content++$1203-0650$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1203-0650$/http%3A%2F%2Fchinese.engadget.com%2Frss.xml" htmlUrl="https://hk.news.yahoo.com/hong-kong/"/>
+//     title: 'Yahoo News HK',
+//     feedID: 'yahoo-news-hk',
+//     feedURL: 'https://hk.news.yahoo.com/tech/rss.xml',
+//     thumbnail: 'https://hk.news.yahoo.com/favicon.ico',
+//     itemFilters: [
+//       ItemFilters['sites'].ItemFilterBlog,
+//       ItemFilters['sites'].ItemFilterFuntop,
+//       // ItemFilters['common'].ItemFilterImageEmbed,
+//     ],
+//     options: {
+//       selector: 'article[id]'
+//     }
+//   },
 // ]
 
 module.exports = feedList

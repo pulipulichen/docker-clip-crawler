@@ -6,7 +6,8 @@ function removeAttributes(html, attributes = [
   'data-attachment-id', 'data-permalink', 'data-orig-file', 'srcset', 'rel',
   'data-src', 'data-srcset', 'data-sizes', 'referrerpolicy',
   'data-image-title', 'ezimgfmt', 'importance', 'data-id', 'data-type',
-  'data-ezsrcset', 'data-ezsrc'
+  'data-ezsrcset', 'data-ezsrc', 'data-query',
+  'data-crop-orig-src', 'data-uuid'
 ]) {
   const $ = cheerio.load(html);
 
@@ -63,12 +64,15 @@ function removeAttributes(html, attributes = [
     '<center>\n</center>',
     '<h2>\n</h2>',
     '<div>\n</div>',
+    '<div align="center">\n</div>',
+    '<p>\n</p>',
     `<div>
 </div>`,
     '<p>###</p>',
     ' alt=""',
     ' title=""'
   ]
+  
   removeKeywordList.forEach(keyword => {
     while (htmlOutput.indexOf(keyword) > -1) {
       htmlOutput = htmlOutput.split(keyword).join('').trim()
