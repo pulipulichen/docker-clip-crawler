@@ -76,7 +76,7 @@ module.exports = async function (feedURL, options = {}) {
 
     // output
 
-    // console.log(output)
+    // console.log(output) 
 
     return output
   }, parseInt(cacheDay * 1000 * 60 * 60 * 24, 10))
