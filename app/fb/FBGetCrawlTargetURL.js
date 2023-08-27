@@ -41,7 +41,7 @@ const getXFBType = async function (link) {
     })
 
     const $ = cheerio.load(html) // 載入 body
-    // console.log($('body').html())
+    console.log($('body').html())
     let outputURL = xFBLinkParser($)
 
     if (outputURL) {
