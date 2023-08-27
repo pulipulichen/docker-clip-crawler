@@ -63,6 +63,27 @@ const main = function ($) {
     image.removeAttr('data-recalc-dims')
   }
 
+  images = $.find('img[data-ezsrc][src^="data:image/"]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('data-ezsrc')
+    
+      
+    // src = src.slice(18, src.indexOf('?')).trim()
+    // src = 'https://' + src
+    image.attr('src', src)
+    image.removeAttr('fetchpriority')
+    image.removeAttr('data-lazy-srcset')
+    image.removeAttr('data-lazy-sizes')
+    image.removeAttr('data-src')
+    image.removeAttr('data-recalc-dims')
+    image.removeAttr('data-ezsrc')
+    image.removeAttr('ezimgfmt')
+    image.removeAttr('data-ezsrcset')
+  }
+
   images = $.find('img[data-src][src="/img/loading.svg"]')
   for (let i = 0; i < images.length; i++) {
     let image = images.eq(i)

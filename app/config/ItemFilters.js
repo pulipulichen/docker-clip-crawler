@@ -1,6 +1,8 @@
 const ItemFilterArticleClean = require('./common/ItemFilterArticleClean.js')
 const ItemFilterImageEmbed = require('./common/ItemFilterImageEmbed.js')
 const ItemFilterThumbnail = require('./common/ItemFilterThumbnail.js')
+const ItemFilterThumbnailCache = require('./common/ItemFilterThumbnailCache.js')
+
 
 const ItemFilterFB = require('./fb/ItemFilterFB.js')
 const ItemFilterFBTitle = require('./fb/ItemFilterFBTitle.js')
@@ -30,7 +32,8 @@ let ItemFilters = {
   common: {
     ItemFilterArticleClean,
     ItemFilterImageEmbed,
-    ItemFilterThumbnail
+    ItemFilterThumbnail,
+    ItemFilterThumbnailCache
   },
   fb: {
     ItemFilterFB,

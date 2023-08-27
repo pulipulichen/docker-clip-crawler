@@ -374,24 +374,25 @@ let feedList = [
       selector: '#main-container'
     }
   },
+  { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
+    title: 'Chrome Unboxed',
+    feedID: 'chromeunboxed',
+    feedURL: 'https://chromeunboxed.com/feed/',
+    itemFilters: [
+      ItemFilters['sites'].ItemFilterBlog,
+      ItemFilters['common'].ItemFilterImageEmbed,
+      ItemFilters['common'].ItemFilterThumbnailCache,
+    ],
+    options: {
+      selector: 'article > .entry-content'
+    }
+  },
 ]
 
 // ----------------------------------------------------------------
 
 // feedList = [
-//   { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
-//     title: '批踢踢實業坊 Hearthstone 板',
-//     feedID: 'ptt-Hearthstone',
-//     feedURL: 'https://www.ptt.cc/atom/Hearthstone.xml',
-//     thumbnail: 'https://i.ibb.co/Fm611Y1/Ptt-Chrome-200x198.png',
-//     itemFilters: [
-//       ItemFilters['sites'].ItemFilterBlog,
-//       ItemFilters['sites'].ItemFilterPTT,
-//     ],
-//     options: {
-//       selector: '#main-container'
-//     }
-//   },
+  
 // ]
 
 module.exports = feedList
