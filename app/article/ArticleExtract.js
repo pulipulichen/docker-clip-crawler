@@ -5,6 +5,11 @@ const ArticleRemoveAd = require('./ArticleRemoveAd.js')
 const ArticleImageDelazy = require('./ArticleImageDelazy.js')
 const fs = require('fs');
 
+const https = require('https');
+const agent = new https.Agent({
+  rejectUnauthorized: false
+});
+
 async function extractMainArticleHTML(url, selectors = [
   'article', '#main', 'body',
   'main > .thin > .card',
@@ -19,11 +24,12 @@ async function extractMainArticleHTML(url, selectors = [
   'article > .ag-article__content',
   '#article-content-inner[itemprop="articleBody"]',
   'article[id] > .td-post-content',
-  'article[id] > .entry-content'
+  'article[id] > .entry-content',
+  'article[id] > .entry__content'
 ]) {
   try {
     // Fetch the HTML content of the URL
-    const response = await axios.get(url);
+    const response = await axios.get(url, {httpsAgent: agent});
     let html = response.data;
 
     // Load the HTML content into cheerio for manipulation

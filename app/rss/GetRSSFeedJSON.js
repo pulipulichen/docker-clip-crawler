@@ -19,14 +19,21 @@ module.exports = async function (feedURL, options = {}) {
             // ['media:content', 'media']
             ['media:content', 'media:content', {keepArray: true}],
           ],
+        },
+        requestOptions: {
+          rejectUnauthorized: false
         }
       })
     }
 
     let output = await parser.parseURL(feedURL)
+    // console.log(output)
 
     if (!output.thumbnail && output.image && output.image.url) {
       output.thumbnail = output.image.url
+    }
+    if (!output.thumbnail && options.thumbnail) {
+      output.thumbnail = options.thumbnail
     }
     // console.log(output)
     // process.exit(1)

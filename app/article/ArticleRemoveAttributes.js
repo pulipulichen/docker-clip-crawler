@@ -4,7 +4,7 @@ function removeAttributes(html, attributes = [
   'class', 'id', 'style', 'width', 'height', 'data-original', 'decoding', 'loading', 'srcset', 'sizes', 
   'data-lazy-srcset', 'data-large-file', 'data-image-description', 'data-image-caption', 'data-medium-file', 'data-image-meta', 'data-comments-opened', 'data-orig-size',
   'data-attachment-id', 'data-permalink', 'data-orig-file', 'srcset', 'rel',
-  'data-src'
+  'data-src', 'data-srcset', 'data-sizes'
 ]) {
   const $ = cheerio.load(html);
 
@@ -58,6 +58,7 @@ function removeAttributes(html, attributes = [
     '<div aria-hidden="true"></div>',
     '<div></div>',
     '<h2>&nbsp;</h2>',
+    '<center>\n</center>',
     '<h2>\n</h2>',
     '<div>\n</div>',
     `<div>

@@ -238,17 +238,63 @@ let feedList = [
   //     selector: 'article[id] > .td-post-content'
   //   }
   // },
-  { // <outline type="rss" text="靖技場++" title="靖技場++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/http%3A%2F%2Fjinnsblog.blogspot.com%2Ffeeds%2Fposts%2Fdefault" htmlUrl="https://www.jinnsblog.com/"/>
-    title: '靖技場 聊 3C',
-    feedID: 'jinnsblog',
-    feedURL: 'https://www.jinnsblog.com/feed',
+  // { // <outline type="rss" text="靖技場++" title="靖技場++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/http%3A%2F%2Fjinnsblog.blogspot.com%2Ffeeds%2Fposts%2Fdefault" htmlUrl="https://www.jinnsblog.com/"/>
+  //   title: '靖技場 聊 3C',
+  //   feedID: 'jinnsblog',
+  //   feedURL: 'https://www.jinnsblog.com/feed',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article[id] > .entry-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="要改的地方太多了，那就改天吧++" title="要改的地方太多了，那就改天吧++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Fblog.user.today%2Ffeed%2F" htmlUrl="https://blog.user.today"/>
+  //   title: '要改的地方太多了，那就改天吧',
+  //   feedID: 'user.today',
+  //   feedURL: 'https://blog.user.today/feed',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article[id] > .entry__content'
+  //   }
+  // },
+  // { // <outline type="rss" text="3C匠-喜愛玩各種3C產品++$0414-1925$" title="3C匠-喜愛玩各種3C產品++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/https%3A%2F%2F3cjohnhardware.wordpress.com%2Ffeed%2F" htmlUrl="https://3cjohnhardware.wordpress.com"/>
+  //   title: '3C匠',
+  //   feedID: '3cjohnhardware',
+  //   feedURL: 'https://3cjohnhardware.wordpress.com/feed',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article[id] > .entry-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="香腸炒章魚 :: 痞客邦 PIXNET ::++$0414-1925$" title="香腸炒章魚 :: 痞客邦 PIXNET ::++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffeed.pixnet.net%2Fblog%2Fposts%2Frss%2Fmitblog" htmlUrl="http://mitblog.pixnet.net/blog"/>
+  //   title: '香腸炒章魚',
+  //   feedID: 'mitblog',
+  //   feedURL: 'https://feed.pixnet.net/blog/posts/rss/mitblog',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '#article-content-inner[itemprop="articleBody"]'
+  //   }
+  // },
+  { // <outline type="rss" text="linux-apps.com - Latest Products++" title="linux-apps.com - Latest Products++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Fwww.linux-apps.com%2Fcontent.rdf"/>
+    title: 'Linux Apps',
+    feedID: 'linux-apps',
+    feedURL: 'https://www.linux-apps.com/content.rdf',
+    thumbnail: 'https://www.linux-apps.com/stores/media/store_logo/storeLogo.png',
     itemFilters: [
-      ItemFilters['sites'].ItemFilterBlog,
-      // ItemFilters['common'].ItemFilterImageEmbed,
+      ItemFilters['sites'].ItemFilterLinuxApps,
+      ItemFilters['common'].ItemFilterThumbnail,
     ],
-    options: {
-      selector: 'article[id] > .entry-content'
-    }
   },
 ]
 

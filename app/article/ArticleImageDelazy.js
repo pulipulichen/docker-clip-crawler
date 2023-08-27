@@ -48,8 +48,11 @@ const main = function ($) {
 
     // console.log(image.attr('data-lazy-src'))
     let src = image.attr('data-src')
-    src = src.slice(18, src.indexOf('?')).trim()
-    src = 'https://' + src
+    if (src.startsWith('https://i0.wp.com/')) {
+      src = src.slice(18, src.indexOf('?')).trim()
+      src = 'https://' + src
+    }
+      
     // src = src.slice(18, src.indexOf('?')).trim()
     // src = 'https://' + src
     image.attr('src', src)
