@@ -14,11 +14,11 @@ let CONFIG = {
   titleAppend: '[RSS+]',
   idAppend: false,
 
-  maxDownloadItemPerFeed: 3,
+  maxDownloadItemPerFeed: 50,
   maxDownloadFeed: 50,
   newArrialMax: 50,
   maxDownloadItems: 100,
-  maxExcutionMinutes: 25,thumbnail: 'https://cdn.iplaysoft.com/ips/logo/200x200.png',
+  maxExcutionMinutes: 25,
   maxWait: 3,
 
   maxFileCache: 5000,
