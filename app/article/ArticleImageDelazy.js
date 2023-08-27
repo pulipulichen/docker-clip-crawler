@@ -12,6 +12,36 @@ const main = function ($) {
     image.removeAttr('decoding')
   }
 
+  images = $.find('img[src^="https://i0.wp.com/"]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('src')
+    src = src.slice(18, src.indexOf('?')).trim()
+    src = 'https://' + src
+    image.attr('src', src)
+    image.removeAttr('fetchpriority')
+    image.removeAttr('data-lazy-srcset')
+    image.removeAttr('data-lazy-sizes')
+    image.removeAttr('data-recalc-dims')
+  }
+
+  images = $.find('img[data-orig-file]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('data-orig-file')
+    // src = src.slice(18, src.indexOf('?')).trim()
+    // src = 'https://' + src
+    image.attr('src', src)
+    image.removeAttr('fetchpriority')
+    image.removeAttr('data-lazy-srcset')
+    image.removeAttr('data-lazy-sizes')
+    image.removeAttr('data-recalc-dims')
+  }
+
   // $.find('img[data-lazy-src]').each(function () {
   //   // const $this = $(this);
   //   // const $this = cheerio.load(this);

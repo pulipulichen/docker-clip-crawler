@@ -1,6 +1,10 @@
 const cheerio = require('cheerio');
 
-function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', 'height', 'data-original', 'decoding', 'loading']) {
+function removeAttributes(html, attributes = [
+  'class', 'id', 'style', 'width', 'height', 'data-original', 'decoding', 'loading', 'srcset', 'sizes', 
+  'data-lazy-srcset', 'data-large-file', 'data-image-description', 'data-image-caption', 'data-medium-file', 'data-image-meta', 'data-comments-opened', 'data-orig-size',
+  'data-attachment-id', 'data-permalink', 'data-orig-file'
+]) {
   const $ = cheerio.load(html);
 
   attributes.forEach((attr) => {
@@ -18,7 +22,7 @@ function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', '
     }
   });
 
-  $('image-group').each(function () {
+  $('image-group,figure').each(function () {
     const $this = $(this);
     $this.replaceWith($this.html());
   });
@@ -42,6 +46,8 @@ function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', '
     '<p>&nbsp;</p>',
     '<p><strong><span>–</span></strong></p>',
     '<p></p>',
+    '<div aria-hidden="true"></div>',
+    '<div></div>',
     ' alt=""'
   ]
   removeKeywordList.forEach(keyword => {

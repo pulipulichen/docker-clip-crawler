@@ -15,6 +15,11 @@ const ItemFilterTwitter = require('./twitter/ItemFilterTwitter.js')
 const ItemFilterTwitterPokemonGoJiang = require('./sites/ItemFilterTwitterPokemonGoJiang.js')
 
 const ItemFilterBlog = require('./sites/ItemFilterBlog.js')
+const ItemFilterBloggerSteamWishlist = require('./sites/ItemFilterBloggerSteamWishlist.js')
+const ItemFilterBloggerNCCUCC = require('./sites/ItemFilterBloggerNCCUCC.js')
+const ItemFilterOSChina = require('./sites/ItemFilterOSChina.js')
+const ItemFilterSolidot = require('./sites/ItemFilterSolidot.js')
+
 
 let ItemFilters = {
   common: {
@@ -36,7 +41,11 @@ let ItemFilters = {
     ItemFilterFBCheapAOE,
     ItemFilterFBTomchunTW,
     ItemFilterTwitterPokemonGoJiang,
-    ItemFilterBlog
+    ItemFilterBlog,
+    ItemFilterBloggerSteamWishlist,
+    ItemFilterBloggerNCCUCC,
+    ItemFilterOSChina,
+    ItemFilterSolidot
   } 
 }
 

@@ -5,7 +5,16 @@ const ArticleRemoveAd = require('./ArticleRemoveAd.js')
 const ArticleImageDelazy = require('./ArticleImageDelazy.js')
 const fs = require('fs');
 
-async function extractMainArticleHTML(url, selectors = 'article,#main,body') {
+async function extractMainArticleHTML(url, selectors = [
+  'article', '#main', 'body',
+  'main > .thin > .card',
+  '.post-entry',
+  '.entry-content[itemprop="text"]',
+  '.entry-content',
+  '.p_mainnew',
+  '.tdb_single_content .tdb-block-inner.td-fix-index',
+  '.Zi_ad_ar_iR'
+]) {
   try {
     // Fetch the HTML content of the URL
     const response = await axios.get(url);

@@ -84,11 +84,11 @@ module.exports = async function (items, feedItem = {}) {
 
         console.log([`[RSSDownloaderItems] Download pushed`, item.url, feedFilename, downloadedCount, (new Date().toISOString())].join('\t'))
         
-        // if (downloadedCount >= maxItems) {
-        //   nextChannelCount++
-        //   console.log([`[DOWNLOAD] Reach maxItems ${maxItems}. Go to next channel.`, feedFilename, nextChannelCount, (new Date().toISOString())].join('\t'))
-        //   break
-        // }
+        if (downloadedCount >= maxItems) {
+          nextChannelCount++
+          console.log([`[DOWNLOAD] Reach maxItems ${maxItems}. Go to next channel.`, feedFilename, nextChannelCount, (new Date().toISOString())].join('\t'))
+          break
+        }
 
         // break
       }

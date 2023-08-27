@@ -204,6 +204,13 @@ ${item.caption}
       // let d = moment(item.date).format('M.D')
       // title = '' + d + ']' + title
       
+      let thumbnailHTML = ''
+      if (item.thumbnail) {
+        thumbnailHTML = `<itunes:image href="${item.thumbnail}"/>
+        <media:content url="${item.thumbnail}" medium="image"/>`
+      }
+
+
       output.push(`<item>
       <title><![CDATA[${title}]]></title>
       <link>${item.link}</link>
@@ -216,8 +223,7 @@ ${item.caption}
         <![CDATA[${description.join('\n')}]]>
       </description>
       <content:encoded><![CDATA[${description.join('<br />\n')}]]></content:encoded>
-      <itunes:image href="${item.thumbnail}"/>
-      <media:content url="${item.thumbnail}" medium="image"/>
+      ${thumbnailHTML}
       <pubDate>${item.date}</pubDate>
     </item>`)
     }

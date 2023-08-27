@@ -18,6 +18,8 @@ let main = async function (item, options = {}) {
     referer
   } = options
 
+  
+
   // console.log(CONFIG.publicURL)
   // let urls = item.content.match(urlPattern).filter((url) => {
   //   if (url.startsWith(CONFIG.publicURL)) {
@@ -41,11 +43,29 @@ let main = async function (item, options = {}) {
   // process.exit(1)
 
   let crawlTargetURL = item.link
-
+  
   if (!crawlTargetURL) {
     return item
   }
-  
+
+  if (crawlTargetURL.startsWith('https://www.oschina.net/news/')) {
+    selector = '.article-detail > .content'
+  }
+  else if (crawlTargetURL.startsWith('https://gitee.com/')) {
+    selector = '.file_content.markdown-body'
+  }
+  else if (crawlTargetURL.startsWith('https://my.oschina.net/')) {
+    selector = '.article-detail > .content'
+  }
+  else if (crawlTargetURL.startsWith('https://www.oschina.net/p/')) {
+    selector = '#intro > .section-body .article-detail .content'
+  }
+  else {
+    selector = '.article-detail > .content'
+  }
+  // https://my.oschina.net/u/4843764/blog/10101685
+  // https://gitee.com/horsejs_admin/ScreenCapture
+
   // console.log(crawlTargetURL)
   // process.exit(1)
   // console.log({selector})

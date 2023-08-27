@@ -2,7 +2,7 @@
 // const ConfigCheck = require('./app/config/ConfigCheck.js')
 // const feedList = require('./config-list.js')
 
-let test = '1730'
+let test = '1738'
 
 let CONFIG = {
   // publicURL: `https://democwise2016.github.io/action-RSS-Fulltext/`,
@@ -12,7 +12,7 @@ let CONFIG = {
   titleAppend: '[RSS+] 20230827-' + test,
   idAppend: '20230827-' + test,
 
-  maxDownloadItemPerFeed: 50,
+  maxDownloadItemPerFeed: 3,
   maxDownloadFeed: 50,
   newArrialMax: 50,
   maxDownloadItems: 100,
