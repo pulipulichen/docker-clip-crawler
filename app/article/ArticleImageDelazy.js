@@ -63,6 +63,26 @@ const main = function ($) {
     image.removeAttr('data-recalc-dims')
   }
 
+  images = $.find('img[data-src][src="/img/loading.svg"]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('data-src')
+    image.attr('src', src)
+    image.removeAttr('data-src')
+  }
+
+  images = $.find('img[data-src]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('data-src')
+    image.attr('src', src)
+    image.removeAttr('data-src')
+  }
+
   images = $.find('img[src^="//"]')
   for (let i = 0; i < images.length; i++) {
     let image = images.eq(i)
