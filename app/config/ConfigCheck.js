@@ -1,6 +1,12 @@
 const StringToRGBColorCode = require('./StringToRGBColorCode.js')
 const OutputFeedFilenameBuilder = require('./../podcast/OutputFeedFilenameBuilder.js')
 
+function getHostWithProtocol(url) {
+  var parsedUrl = new URL(url);
+  var hostWithProtocol = parsedUrl.protocol + '//' + parsedUrl.host + '/';
+  return hostWithProtocol;
+}
+
 module.exports = function (CONFIG) {
   if (CONFIG.publicURL.endsWith('/') === false) {
     CONFIG.publicURL = CONFIG.publicURL + '/'
@@ -10,7 +16,15 @@ module.exports = function (CONFIG) {
     let feedItem = CONFIG.feedList[i]
 
     if (CONFIG.idAppend) {
-      feedID = CONFIG.idAppend + '-' + feedID
+      feedItem.feedID = CONFIG.idAppend + '-' + feedItem.feedID
+    }
+
+    if (feedItem.feedURL && (!feedItem.options || !feedItem.options.referer)) {
+      if (!feedItem.options) {
+        feedItem.options = {}
+      }
+
+      feedItem.options.referer = getHostWithProtocol(feedItem.feedURL)
     }
   
     if (!feedItem.feedURL && feedItem.homepageURL) {

@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 
-function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', 'height', 'data-original']) {
+function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', 'height', 'data-original', 'decoding', 'loading']) {
   const $ = cheerio.load(html);
 
   attributes.forEach((attr) => {
@@ -40,13 +40,20 @@ function removeAttributes(html, attributes = ['class', 'id', 'style', 'width', '
 
   let removeKeywordList = [
     '<p>&nbsp;</p>',
-    '\n\n'
+    '<p><strong><span>–</span></strong></p>',
+    '<p></p>',
+    ' alt=""'
   ]
   removeKeywordList.forEach(keyword => {
     while (htmlOutput.indexOf(keyword) > -1) {
       htmlOutput = htmlOutput.split(keyword).join('')
     }
   })
+
+  while (htmlOutput.indexOf('\n\n') > -1) {
+    htmlOutput = htmlOutput.split('\n\n').join('\n')
+  }
+  
 
   // if (htmlOutput.endsWith('"')) {
   //   htmlOutput = htmlOutput.slice(0, -1)

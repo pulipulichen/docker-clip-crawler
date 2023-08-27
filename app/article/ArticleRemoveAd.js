@@ -1,9 +1,6 @@
 const ArticleRemoveAd = function ($) {
 
-  $.find('.adsbygoogle').remove()
-  $.find('script').remove()
-  $.find('ins').remove()
-  $.find('.content-ads-container').remove()
+  $.find('.adsbygoogle,script,ins,.single_ads,.content-ads-container').remove()
 
   return $
 }

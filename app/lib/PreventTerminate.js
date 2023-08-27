@@ -14,7 +14,7 @@ module.exports = function () {
   let start = (new Date()).getTime()
   let lastUpdateTime
   let sameTimeCounter = 0
-  let maxSameTime = 3
+  let maxSameTime = CONFIG.maxWait
   setInterval(() => {
     if (lastUpdateTime !== getUpdateTime()) {
       lastUpdateTime = getUpdateTime()

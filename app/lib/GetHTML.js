@@ -25,7 +25,7 @@ let reduceCurrentThreads = function () {
   }
 }
 
-const CONFIG = require('./../../config.js')
+const CONFIG = require('./../../config-json.js')
 
 let startTimer = false
 let maxExcutionMS = CONFIG.maxExcutionMinutes * 60 * 1000

@@ -2,6 +2,8 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const ArticleRemoveAd = require('./ArticleRemoveAd.js')
+const ArticleImageDelazy = require('./ArticleImageDelazy.js')
+const fs = require('fs');
 
 async function extractMainArticleHTML(url, selectors = 'article,#main,body') {
   try {
@@ -36,10 +38,14 @@ async function extractMainArticleHTML(url, selectors = 'article,#main,body') {
       
 
     if (article.length === 0) {
+      console.error('Selectors not found: ' + selectors + ' ' + url + ' ' + html.indexOf('Zi_ad_ar_iR'))
+      fs.writeFileSync('/app/tmp/article.html', html, 'utf8')
       return html
     }
 
     article = ArticleRemoveAd(article)
+    article = ArticleImageDelazy(article)
+    
 
     const mainArticle = article.html();
 

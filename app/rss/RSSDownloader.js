@@ -1,5 +1,5 @@
 const ParseRSSID = require('./ParseRSSID.js')
-const GetUBFeedJSON = require('./GetUBFeedJSON.js')
+const GetRSSFeedJSON = require('./GetRSSFeedJSON.js')
 // const SiteInfo = require('./SiteInfo.js')
 const RSSFeedBuilder = require('./builder/RSSFeedBuilder.js')
 const RSSDownloaderItems = require('./items/RSSDownloaderItems.js')
@@ -33,7 +33,7 @@ module.exports = async function (feedItem = {}) {
 
   // ---------
   // 取得Feed的資訊
-  let feedJSON = await GetUBFeedJSON(feedURL)
+  let feedJSON = await GetRSSFeedJSON(feedURL)
   // fs.writeFileSync('/output/feed.json', JSON.stringify(feedJSON, null, 2), 'utf8')
   
   // ---------
