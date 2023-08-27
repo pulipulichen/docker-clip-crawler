@@ -69,9 +69,9 @@ jobs:
 
       # ----------------------------------------------------------------
 
-      - name: Clean Cache
-        run: |
-          rm -rf /cache/*
+      # - name: Clean Cache
+      #   run: |
+      #     rm -rf /cache/*
       #    rm -rf /output/*
       #     docker rmi -f $(docker images -aq)
       #     docker network prune -f

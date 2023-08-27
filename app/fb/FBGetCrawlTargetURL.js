@@ -1,6 +1,7 @@
 //const htmlLoader = require('./../../../api/full-text-parser/html-loader/htmlLoader.js')
 
-const htmlLoader = require('./../lib/GetHTML.js')
+// const htmlLoader = require('./../lib/GetHTML.js')
+const htmlLoader = require('./HTMLLoader.js')
 
 const cheerio = require('cheerio')
 
@@ -37,7 +38,8 @@ const getXFBType = async function (link) {
     //console.log(link)
 
     let html = await htmlLoader(link, {
-      crawler: 'puppeteer'
+      // crawler: 'puppeteer',
+
     })
 
     const $ = cheerio.load(html) // 載入 body

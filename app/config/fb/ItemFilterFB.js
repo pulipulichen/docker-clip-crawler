@@ -4,7 +4,7 @@ const ItemFilterFBThumbnail = require('./ItemFilterFBThumbnail.js')
 const ItemFilterFBTitleRemoveID = require('./ItemFilterFBTitleRemoveID.js')
 const ItemFilterFBContentVideo = require('./ItemFilterFBContentVideo.js')
 const ItemFilterImageEmbed = require('./../common/ItemFilterImageEmbed.js')
-// const ItemFilterFBContentExtract = require('./ItemFilterFBContentExtract.js')
+const ItemFilterFBContentExtract = require('./ItemFilterFBContentExtract.js')
 
 let main = async function (item, options = {}) {
   let filters = [
@@ -14,7 +14,7 @@ let main = async function (item, options = {}) {
     ItemFilterFBTitleRemoveID,
     ItemFilterFBContentVideo,
     ItemFilterImageEmbed,
-    // ItemFilterFBContentExtract
+    ItemFilterFBContentExtract
   ]
 
   for (let i = 0; i < filters.length; i++) {

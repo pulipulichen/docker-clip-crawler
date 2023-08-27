@@ -127,20 +127,20 @@ let feedList = [
 
 // ----------------------------------------------------------------
 
-// feedList = [
-//   {
-//     title: '4Gamers on Facebook',
-//     feedID: '4GamersTaiwan',
-//     feedURL: 'http://fetchrss.com/rss/5f99840f8d12cb2c1f520232622423dec5351844b5755312.xml',
-//     itemFilters: [
-//       // ItemFilters['sites'].ItemFilterFBCheapAOE,
-//       ItemFilters['fb'].ItemFilterFB,
-//     ],
-//     options: {
-//       referer: 'https://www.4gamers.com.tw/',
-//       selector: ['noscript', 'article']
-//     }
-//   },
-// ]
+feedList = [
+  {
+    title: '遊戲角落 on Facebook',
+    feedID: 'udngame',
+    feedURL: 'http://fetchrss.com/rss/5f999158644572630d2ebfc3622425c2097d927598544362.xml',
+    itemFilters: [
+      // ItemFilters['sites'].ItemFilterFBCheapAOE,
+      ItemFilters['fb'].ItemFilterFB,
+    ],
+    options: {
+      referer: 'https://game.udn.com/',
+      selector: 'section.article-content__editor'
+    }
+  },
+]
 
 module.exports = feedList
