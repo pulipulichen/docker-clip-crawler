@@ -37,11 +37,12 @@ const getXFBType = async function (link) {
     //console.log(link)
 
     let html = await htmlLoader(link, {
-      // crawler: 'puppeteer'
+      crawler: 'puppeteer'
     })
 
     const $ = cheerio.load(html) // 載入 body
     console.log($('body').html())
+    console.log(html.indexOf('https://lm.facebook.com/l.php?'))
     let outputURL = xFBLinkParser($)
 
     if (outputURL) {

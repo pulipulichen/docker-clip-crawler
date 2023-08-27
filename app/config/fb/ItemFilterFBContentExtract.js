@@ -17,11 +17,11 @@ let main = async function (item, options = {}) {
   console.log({crawlTargetURL})
   // return item
 
-  if (referer && crawlTargetURL.startsWith(referer) === false) {
-    return false
+  if (crawlTargetURL === 'post' || crawlTargetURL === 'video') {
+    return item
   }
 
-  if (crawlTargetURL === 'post' || crawlTargetURL === 'video') {
+  if (referer && crawlTargetURL.startsWith(referer) === false) {
     return item
   }
 

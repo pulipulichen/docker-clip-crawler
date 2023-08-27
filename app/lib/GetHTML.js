@@ -61,7 +61,7 @@ async function GetHTML (url, options = {}) {
     puppeteerArgs = ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=800,600'],
     puppeteerAgent,
     // puppeteerWaitUntil = `networkidle2`,
-    puppeteerWaitUntil = `networkidle0`,
+    puppeteerWaitUntil = `networkidle2`,
     // puppeteerWaitUntil = `domcontentloaded`,
     puppeteerWaitForSelector,
     puppeteerWaitForSelectorTimeout = 30000,
