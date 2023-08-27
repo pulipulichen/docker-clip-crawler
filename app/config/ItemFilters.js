@@ -23,6 +23,7 @@ const ItemFilterSolidot = require('./sites/ItemFilterSolidot.js')
 const ItemFilterPCRookie = require('./sites/ItemFilterPCRookie.js')
 const ItemFilterLinuxApps = require('./sites/ItemFilterLinuxApps.js')
 const ItemFilterLinuxeden = require('./sites/ItemFilterLinuxeden.js')
+const ItemFilterPTT = require('./sites/ItemFilterPTT.js')
 
 
 let ItemFilters = {
@@ -53,7 +54,8 @@ let ItemFilters = {
     ItemFilterSolidot,
     ItemFilterPCRookie,
     ItemFilterLinuxApps,
-    ItemFilterLinuxeden
+    ItemFilterLinuxeden,
+    ItemFilterPTT,
   } 
 }
 

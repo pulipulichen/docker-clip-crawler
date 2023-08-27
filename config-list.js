@@ -348,22 +348,48 @@ let feedList = [
       selector: '#content > .post > .entry-content'
     }
   },
+  { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
+    title: '批踢踢實業坊 Hearthstone 板',
+    feedID: 'ptt-Hearthstone',
+    feedURL: 'https://www.ptt.cc/atom/Hearthstone.xml',
+    thumbnail: 'https://i.ibb.co/Fm611Y1/Ptt-Chrome-200x198.png',
+    itemFilters: [
+      ItemFilters['sites'].ItemFilterBlog,
+      ItemFilters['sites'].ItemFilterPTT,
+    ],
+    options: {
+      selector: '#main-container'
+    }
+  },
+  { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
+    title: '批踢踢實業坊 PokemonGo 板',
+    feedID: 'ptt-PokemonGo',
+    feedURL: 'https://www.ptt.cc/atom/PokemonGo.xml',
+    thumbnail: 'https://i.ibb.co/Fm611Y1/Ptt-Chrome-200x198.png',
+    itemFilters: [
+      ItemFilters['sites'].ItemFilterBlog,
+      ItemFilters['sites'].ItemFilterPTT,
+    ],
+    options: {
+      selector: '#main-container'
+    }
+  },
 ]
 
 // ----------------------------------------------------------------
 
 // feedList = [
-//   {
-//     title: '遊戲角落 on Facebook',
-//     feedID: 'udngame',
-//     feedURL: 'http://fetchrss.com/rss/5f999158644572630d2ebfc3622425c2097d927598544362.xml',
+//   { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
+//     title: '批踢踢實業坊 Hearthstone 板',
+//     feedID: 'ptt-Hearthstone',
+//     feedURL: 'https://www.ptt.cc/atom/Hearthstone.xml',
+//     thumbnail: 'https://i.ibb.co/Fm611Y1/Ptt-Chrome-200x198.png',
 //     itemFilters: [
-//       // ItemFilters['sites'].ItemFilterFBCheapAOE,
-//       ItemFilters['fb'].ItemFilterFB,
+//       ItemFilters['sites'].ItemFilterBlog,
+//       ItemFilters['sites'].ItemFilterPTT,
 //     ],
 //     options: {
-//       referer: 'https://game.udn.com/',
-//       selector: 'section.article-content__editor'
+//       selector: '#main-container'
 //     }
 //   },
 // ]
