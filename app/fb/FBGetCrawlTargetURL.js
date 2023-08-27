@@ -30,9 +30,9 @@ const getXFBType = async function (link) {
   
   // return await nodeCache.get('xFBType', link, async () => {
 
-    // if (link.startsWith('https://www.facebook.com/')) {
-    //   link = 'https://m.facebook.com/' + link.slice(25)
-    // }
+    if (link.startsWith('https://www.facebook.com/')) {
+      link = 'https://m.facebook.com/' + link.slice(25)
+    }
 
     //console.log(link)
 
@@ -41,10 +41,10 @@ const getXFBType = async function (link) {
     })
 
     const $ = cheerio.load(html) // 載入 body
-    console.log($('body').html())
-    console.log(html.indexOf('https://lm.facebook.com/l.php?'))
+    // console.log($('body').html())
+    // console.log(html.indexOf('https://lm.facebook.com/l.php?'))
 
-
+    
     let outputURL = xFBLinkParser($)
 
     if (outputURL) {

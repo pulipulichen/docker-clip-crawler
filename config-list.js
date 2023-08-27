@@ -115,19 +115,6 @@ let feedList = [
     }
   },
   {
-    title: '4Gamers on Facebook',
-    feedID: '4GamersTaiwan',
-    feedURL: 'http://fetchrss.com/rss/5f99840f8d12cb2c1f520232622423dec5351844b5755312.xml',
-    itemFilters: [
-      // ItemFilters['sites'].ItemFilterFBCheapAOE,
-      ItemFilters['fb'].ItemFilterFB,
-    ],
-    options: {
-      referer: 'https://www.4gamers.com.tw/',
-      selector: ['noscript', 'article']
-    }
-  },
-  {
     title: '全聯福利中心 on Facebook',
     feedID: 'pxmartchannel',
     feedURL: 'http://fetchrss.com/rss/5ff67856db94f676db0c0fc262242792245c2250db0448d2.xml',
@@ -140,20 +127,20 @@ let feedList = [
 
 // ----------------------------------------------------------------
 
-feedList = [
-  {
-    title: '4Gamers on Facebook',
-    feedID: '4GamersTaiwan',
-    feedURL: 'http://fetchrss.com/rss/5f99840f8d12cb2c1f520232622423dec5351844b5755312.xml',
-    itemFilters: [
-      // ItemFilters['sites'].ItemFilterFBCheapAOE,
-      ItemFilters['fb'].ItemFilterFB,
-    ],
-    options: {
-      referer: 'https://www.4gamers.com.tw/',
-      selector: ['noscript', 'article']
-    }
-  },
-]
+// feedList = [
+//   {
+//     title: '4Gamers on Facebook',
+//     feedID: '4GamersTaiwan',
+//     feedURL: 'http://fetchrss.com/rss/5f99840f8d12cb2c1f520232622423dec5351844b5755312.xml',
+//     itemFilters: [
+//       // ItemFilters['sites'].ItemFilterFBCheapAOE,
+//       ItemFilters['fb'].ItemFilterFB,
+//     ],
+//     options: {
+//       referer: 'https://www.4gamers.com.tw/',
+//       selector: ['noscript', 'article']
+//     }
+//   },
+// ]
 
 module.exports = feedList
