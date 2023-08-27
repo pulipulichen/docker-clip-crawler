@@ -19,7 +19,7 @@ let CONFIG = {
   newArrialMax: 50,
   maxDownloadItems: 100,
   maxExcutionMinutes: 25,
-  maxWait: 3,
+  maxWait: 5,
 
   maxFileCache: 5000,
   // feedList
