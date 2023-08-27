@@ -37,10 +37,7 @@ const getXFBType = async function (link) {
 
     //console.log(link)
 
-    let html = await htmlLoader(link, {
-      // crawler: 'puppeteer',
-
-    })
+    let html = await htmlLoader(link)
 
     const $ = cheerio.load(html) // 載入 body
     // console.log($('body').html())

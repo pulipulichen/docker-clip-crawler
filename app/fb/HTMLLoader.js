@@ -9,6 +9,7 @@ async function fetchFacebookPostHTML(postUrl, referer = 'https://www.facebook.co
         }
       });
 
+      console.log(response.data);
       resolve(response.data)
     } catch (error) {
       reject('Error:' + error.message)
