@@ -63,6 +63,15 @@ const main = function ($) {
     image.removeAttr('data-recalc-dims')
   }
 
+  images = $.find('img[src^="//"]')
+  for (let i = 0; i < images.length; i++) {
+    let image = images.eq(i)
+
+    // console.log(image.attr('data-lazy-src'))
+    let src = image.attr('src')
+    image.attr('src', 'https:' + src)
+  }
+
   // $.find('img[data-lazy-src]').each(function () {
   //   // const $this = $(this);
   //   // const $this = cheerio.load(this);

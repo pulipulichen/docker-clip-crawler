@@ -286,15 +286,41 @@ let feedList = [
   //     selector: '#article-content-inner[itemprop="articleBody"]'
   //   }
   // },
-  { // <outline type="rss" text="linux-apps.com - Latest Products++" title="linux-apps.com - Latest Products++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Fwww.linux-apps.com%2Fcontent.rdf"/>
-    title: 'Linux Apps',
-    feedID: 'linux-apps',
-    feedURL: 'https://www.linux-apps.com/content.rdf',
-    thumbnail: 'https://www.linux-apps.com/stores/media/store_logo/storeLogo.png',
+  // { // <outline type="rss" text="linux-apps.com - Latest Products++" title="linux-apps.com - Latest Products++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Fwww.linux-apps.com%2Fcontent.rdf"/>
+  //   title: 'Linux Apps',
+  //   feedID: 'linux-apps',
+  //   feedURL: 'https://www.linux-apps.com/content.rdf',
+  //   thumbnail: 'https://www.linux-apps.com/stores/media/store_logo/storeLogo.png',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterLinuxApps,
+  //     ItemFilters['common'].ItemFilterThumbnail,
+  //   ],
+  // },
+  // { // <outline type="rss" text="梅問題．教學網++$0414-1925$" title="梅問題．教學網++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffeeds.feedburner.com%2Fminwt%2FLZgW" htmlUrl="https://www.minwt.com/"/>
+  //   title: '梅問題．教學網',
+  //   feedID: 'minwt',
+  //   feedURL: 'http://feeds.feedburner.com/minwt/LZgW',
+  //   thumbnail: 'https://www.minwt.com/images/Icon@2.png',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article > [itemprop="articleBody"]'
+  //   }
+  // },
+  { // <outline type="rss" text="黑暗執行緒++" title="黑暗執行緒++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/http%3A%2F%2Fblog.darkthread.net%2Fblogs%2Fdarkthreadtw%2Frss.aspx" htmlUrl="https://blog.darkthread.net/"/>
+    title: '黑暗執行緒',
+    feedID: 'darkthread',
+    feedURL: 'https://blog.darkthread.net/feed/rss/',
+    thumbnail: 'https://blog.darkthread.net/img/icon512x512.png',
     itemFilters: [
-      ItemFilters['sites'].ItemFilterLinuxApps,
-      ItemFilters['common'].ItemFilterThumbnail,
+      ItemFilters['sites'].ItemFilterBlog,
+      // ItemFilters['common'].ItemFilterImageEmbed,
     ],
+    options: {
+      selector: 'article > [itemprop="articleBody mainEntityOfPage"]'
+    }
   },
 ]
 
