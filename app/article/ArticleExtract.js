@@ -10,6 +10,8 @@ const agent = new https.Agent({
   rejectUnauthorized: false
 });
 
+const NodeCacheSqlite = require('./../lib/NodeCacheSqlite')
+
 async function extractMainArticleHTML(url, selectors = [
   'article', '#main', 'body',
   'main > .thin > .card',
@@ -29,8 +31,10 @@ async function extractMainArticleHTML(url, selectors = [
 ]) {
   try {
     // Fetch the HTML content of the URL
-    const response = await axios.get(url, {httpsAgent: agent});
-    let html = response.data;
+    let html = await NodeCacheSqlite.get(`ArticleExtract`, url, async () => {
+      const response = await axios.get(url, {httpsAgent: agent});
+      return response.data;
+    }, 1000 * 60 * 60 * 24 * 90)
 
     // Load the HTML content into cheerio for manipulation
     
