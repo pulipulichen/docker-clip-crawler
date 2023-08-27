@@ -138,13 +138,22 @@ let feedList = [
   },
 ]
 
-// feedList = [
-//   {
-//     title: 'Watuber蛙家有個蛙土伯',
-//     feedID: 'wajatw',
-//     homepageURL: 'https://www.youtube.com/channel/UChEpXBOkRb9voZ45THsXncg',
-//     itemFilters: ItemFiltersPreset.between3minTo30Min,
-//   },
-// ]
+// ----------------------------------------------------------------
+
+feedList = [
+  {
+    title: '4Gamers on Facebook',
+    feedID: '4GamersTaiwan',
+    feedURL: 'http://fetchrss.com/rss/5f99840f8d12cb2c1f520232622423dec5351844b5755312.xml',
+    itemFilters: [
+      // ItemFilters['sites'].ItemFilterFBCheapAOE,
+      ItemFilters['fb'].ItemFilterFB,
+    ],
+    options: {
+      referer: 'https://www.4gamers.com.tw/',
+      selector: ['noscript', 'article']
+    }
+  },
+]
 
 module.exports = feedList
