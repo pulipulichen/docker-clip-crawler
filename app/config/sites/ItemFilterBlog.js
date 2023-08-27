@@ -61,6 +61,9 @@ let main = async function (item, options = {}) {
     let image = $('img').eq(0)
     item.thumbnail = image.attr('src')
   }
+  else if (item.content.indexOf(item.thumbnail) === -1) {
+    item.content = `<p><a href="${item.thumbnail}" target="_blank"><img src="${item.thumbnail}" /></a></p>\n` + item.content
+  }
 
   return item
 }

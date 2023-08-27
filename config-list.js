@@ -102,17 +102,152 @@ let feedList = [
   //     // ItemFilters['common'].ItemFilterImageEmbed,
   //   ],
   // },
-  { // <outline type="rss" text="海芋小站++" title="海芋小站++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/http%3A%2F%2Ffeedproxy.google.com%2Finotetw" htmlUrl="https://www.inote.tw"/>
-    title: '奇客Solidot',
-    feedID: 'Solidot',
-    feedURL: 'https://www.solidot.org/index.rss',
+  // { // <outline type="rss" text="海芋小站++" title="海芋小站++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/http%3A%2F%2Ffeedproxy.google.com%2Finotetw" htmlUrl="https://www.inote.tw"/>
+  //   title: '奇客Solidot',
+  //   feedID: 'Solidot',
+  //   feedURL: 'https://www.solidot.org/index.rss',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     ItemFilters['sites'].ItemFilterSolidot
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.p_mainnew'
+  //   }
+  // },
+  // { // <outline type="rss" text="海芋小站++" title="海芋小站++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/http%3A%2F%2Ffeedproxy.google.com%2Finotetw" htmlUrl="https://www.inote.tw"/>
+  //   title: 'ePrice 比價王 手機品牌新聞',
+  //   feedID: 'eprice-mobile',
+  //   feedURL: 'http://www.eprice.com.tw/mobile/news/rss.xml',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.first-thread > .user-comment-block'
+  //   }
+  // },
+  // { // <outline type="rss" text="开源工场++" title="开源工场++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Fopeningsource.org%2Ffeed%2F" htmlUrl="https://openingsource.org/"/>
+  //   title: '开源工场',
+  //   feedID: 'openingsource',
+  //   feedURL: 'https://openingsource.org/feed/',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.post> .card-body > .post-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="鷹眼觀察++$0414-1925$" title="鷹眼觀察++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffeeds.feedburner.com%2FVedfolnir" htmlUrl="https://www.vedfolnir.com"/>
+  //   title: '鷹眼觀察',
+  //   feedID: 'vedfolnir',
+  //   feedURL: 'https://www.vedfolnir.com/feed',
+  //   itemFilters: [
+  //     ItemFilters['common'].ItemFilterThumbnail,
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.wp-block-column > .entry-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="電獺少女++" title="電獺少女++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/http%3A%2F%2Fagirls.aotter.net%2F%3Ffeed%3Drss2" htmlUrl="https://agirls.aotter.net/"/>
+  //   title: '電獺少女',
+  //   feedID: 'agirls',
+  //   feedURL: 'https://agirls.aotter.net/feed',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article > .ag-article__content'
+  //   }
+  // },
+  // { // <outline type="rss" text="ePrice 比價王 平板品牌新聞++$1227-1844$" title="ePrice 比價王 平板品牌新聞++$1227-1844$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/http%3A%2F%2Fwww.eprice.com.tw%2Fpad%2Fnews%2Frss.xml" htmlUrl="https://www.eprice.com.tw"/>
+  //   title: 'ePrice 比價王 平板品牌新聞',
+  //   feedID: 'eprice-pad',
+  //   feedURL: 'http://www.eprice.com.tw/pad/news/rss.xml',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.first-thread > .user-comment-block'
+  //   }
+  // },
+  // { // <outline type="rss" text="傻瓜狐狸的雜碎物品 :: 痞客邦 PIXNET ::++$0414-1925$" title="傻瓜狐狸的雜碎物品 :: 痞客邦 PIXNET ::++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffeed.pixnet.net%2Fblog%2Fposts%2Frss%2Fshowmer" htmlUrl="http://www.fox-saying.com/blog"/>
+  //   title: '傻瓜狐狸的雜碎物品',
+  //   feedID: 'fox-saying',
+  //   feedURL: 'http://feed.pixnet.net/blog/posts/rss/showmer',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '#article-content-inner[itemprop="articleBody"]'
+  //   }
+  // },
+  // { // <outline type="rss" text="Linuxeden开源社区++$0413-0909$" title="Linuxeden开源社区++$0413-0909$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0413-0909$,/http%3A%2F%2Fwww.linuxeden.com%2Ffeed" htmlUrl="http://www.linuxeden.com"/>
+  //   title: 'Linuxeden开源社区',
+  //   feedID: 'linuxeden',
+  //   feedURL: 'http://www.linuxeden.com/feed',
+  //   itemFilters: [
+  //     // ItemFilters['sites'].ItemFilterBlog,
+  //     ItemFilters['common'].ItemFilterImageEmbed,
+  //     ItemFilters['common'].ItemFilterArticleClean,
+  //   ],
+  //   // options: {
+  //   //   selector: '#article-content-inner[itemprop="articleBody"]'
+  //   // }
+  // },
+  // { // <outline type="rss" text="我是黃喬伊++$1227-1844$" title="我是黃喬伊++$1227-1844$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/https%3A%2F%2Fiamjoyhuang.com%2Ffeed%2F" htmlUrl="https://iamjoyhuang.com"/>
+  //   title: '黃喬伊教英文',
+  //   feedID: 'iamjoyhuang',
+  //   feedURL: 'https://iamjoyhuang.com/feed/',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: '.entry-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="挨踢路人甲++$1227-1844$" title="挨踢路人甲++$1227-1844$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$1227-1844$/https%3A%2F%2Ffeeds.feedburner.com%2Fitwalker" htmlUrl="https://walker-a.com/"/>
+  //   title: '挨踢路人甲',
+  //   feedID: 'walker-a',
+  //   feedURL: 'https://walker-a.com/feed',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article[id] > .entry-content'
+  //   }
+  // },
+  // { // <outline type="rss" text="軟體玩家++" title="軟體玩家++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/https%3A%2F%2Ffeeds.feedburner.com%2Fquicktop" htmlUrl="https://pcrookie.com/"/>
+  //   title: '軟體玩家',
+  //   feedID: 'quicktop',
+  //   feedURL: 'https://pcrookie.com/?feed=rss2',
+  //   itemFilters: [
+  //     ItemFilters['sites'].ItemFilterBlog,
+  //     ItemFilters['sites'].ItemFilterPCRookie,
+  //     // ItemFilters['common'].ItemFilterImageEmbed,
+  //   ],
+  //   options: {
+  //     selector: 'article[id] > .td-post-content'
+  //   }
+  // },
+  { // <outline type="rss" text="靖技場++" title="靖技場++" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/http%3A%2F%2Fjinnsblog.blogspot.com%2Ffeeds%2Fposts%2Fdefault" htmlUrl="https://www.jinnsblog.com/"/>
+    title: '靖技場 聊 3C',
+    feedID: 'jinnsblog',
+    feedURL: 'https://www.jinnsblog.com/feed',
     itemFilters: [
       ItemFilters['sites'].ItemFilterBlog,
-      ItemFilters['sites'].ItemFilterSolidot
       // ItemFilters['common'].ItemFilterImageEmbed,
     ],
     options: {
-      selector: '.p_mainnew'
+      selector: 'article[id] > .entry-content'
     }
   },
 ]

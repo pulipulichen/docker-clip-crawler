@@ -1,5 +1,6 @@
 const ItemFilterArticleClean = require('./common/ItemFilterArticleClean.js')
 const ItemFilterImageEmbed = require('./common/ItemFilterImageEmbed.js')
+const ItemFilterThumbnail = require('./common/ItemFilterThumbnail.js')
 
 const ItemFilterFB = require('./fb/ItemFilterFB.js')
 const ItemFilterFBTitle = require('./fb/ItemFilterFBTitle.js')
@@ -19,12 +20,14 @@ const ItemFilterBloggerSteamWishlist = require('./sites/ItemFilterBloggerSteamWi
 const ItemFilterBloggerNCCUCC = require('./sites/ItemFilterBloggerNCCUCC.js')
 const ItemFilterOSChina = require('./sites/ItemFilterOSChina.js')
 const ItemFilterSolidot = require('./sites/ItemFilterSolidot.js')
+const ItemFilterPCRookie = require('./sites/ItemFilterPCRookie.js')
 
 
 let ItemFilters = {
   common: {
     ItemFilterArticleClean,
-    ItemFilterImageEmbed
+    ItemFilterImageEmbed,
+    ItemFilterThumbnail
   },
   fb: {
     ItemFilterFB,
@@ -45,7 +48,8 @@ let ItemFilters = {
     ItemFilterBloggerSteamWishlist,
     ItemFilterBloggerNCCUCC,
     ItemFilterOSChina,
-    ItemFilterSolidot
+    ItemFilterSolidot,
+    ItemFilterPCRookie
   } 
 }
 

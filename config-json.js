@@ -2,7 +2,7 @@
 // const ConfigCheck = require('./app/config/ConfigCheck.js')
 // const feedList = require('./config-list.js')
 
-let test = '1738'
+let test = '1742'
 
 let CONFIG = {
   // publicURL: `https://democwise2016.github.io/action-RSS-Fulltext/`,

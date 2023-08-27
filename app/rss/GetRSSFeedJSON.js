@@ -25,6 +25,12 @@ module.exports = async function (feedURL, options = {}) {
 
     let output = await parser.parseURL(feedURL)
 
+    if (!output.thumbnail && output.image && output.image.url) {
+      output.thumbnail = output.image.url
+    }
+    // console.log(output)
+    // process.exit(1)
+
     output.items = output.items.map(item => {
       let media = JSON.stringify(item['media:content'])
       if (media) {

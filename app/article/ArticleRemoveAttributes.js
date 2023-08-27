@@ -3,7 +3,8 @@ const cheerio = require('cheerio');
 function removeAttributes(html, attributes = [
   'class', 'id', 'style', 'width', 'height', 'data-original', 'decoding', 'loading', 'srcset', 'sizes', 
   'data-lazy-srcset', 'data-large-file', 'data-image-description', 'data-image-caption', 'data-medium-file', 'data-image-meta', 'data-comments-opened', 'data-orig-size',
-  'data-attachment-id', 'data-permalink', 'data-orig-file'
+  'data-attachment-id', 'data-permalink', 'data-orig-file', 'srcset', 'rel',
+  'data-src'
 ]) {
   const $ = cheerio.load(html);
 
@@ -31,9 +32,12 @@ function removeAttributes(html, attributes = [
 
   let htmlOutput = $('body').html().trim()
 
+  htmlOutput = htmlOutput.split('\n').map(line => line.trim()).join('\n')
+
   let removeLeadingList = [
     '<p>&nbsp;</p>',
-    '<br>'
+    '<br>',
+    '<div>\n</div>'
   ]
 
   removeLeadingList.forEach(keyword => {
@@ -42,22 +46,36 @@ function removeAttributes(html, attributes = [
     }
   })
 
+  while (htmlOutput.indexOf('\n\n') > -1) {
+    htmlOutput = htmlOutput.split('\n\n').join('\n').trim()
+  }
+
   let removeKeywordList = [
     '<p>&nbsp;</p>',
     '<p><strong><span>–</span></strong></p>',
+    '<span></span>',
     '<p></p>',
     '<div aria-hidden="true"></div>',
     '<div></div>',
-    ' alt=""'
+    '<h2>&nbsp;</h2>',
+    '<h2>\n</h2>',
+    '<div>\n</div>',
+    `<div>
+</div>`,
+    '<p>###</p>',
+    ' alt=""',
+    ' title=""'
   ]
   removeKeywordList.forEach(keyword => {
     while (htmlOutput.indexOf(keyword) > -1) {
-      htmlOutput = htmlOutput.split(keyword).join('')
+      htmlOutput = htmlOutput.split(keyword).join('').trim()
     }
   })
 
+  // console.log(htmlOutput.slice(0, 10))
+
   while (htmlOutput.indexOf('\n\n') > -1) {
-    htmlOutput = htmlOutput.split('\n\n').join('\n')
+    htmlOutput = htmlOutput.split('\n\n').join('\n').trim()
   }
   
 

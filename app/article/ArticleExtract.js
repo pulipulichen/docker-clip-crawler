@@ -13,7 +13,13 @@ async function extractMainArticleHTML(url, selectors = [
   '.entry-content',
   '.p_mainnew',
   '.tdb_single_content .tdb-block-inner.td-fix-index',
-  '.Zi_ad_ar_iR'
+  '.Zi_ad_ar_iR',
+  '.first-thread > .user-comment-block',
+  '.post> .card-body > .post-content',
+  'article > .ag-article__content',
+  '#article-content-inner[itemprop="articleBody"]',
+  'article[id] > .td-post-content',
+  'article[id] > .entry-content'
 ]) {
   try {
     // Fetch the HTML content of the URL
