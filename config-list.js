@@ -206,6 +206,7 @@ let feedList = [
       // ItemFilters['sites'].ItemFilterBlog,
       ItemFilters['common'].ItemFilterImageEmbed,
       ItemFilters['common'].ItemFilterArticleClean,
+      ItemFilters['sites'].ItemFilterLinuxeden,
     ],
     // options: {
     //   selector: '#article-content-inner[itemprop="articleBody"]'
