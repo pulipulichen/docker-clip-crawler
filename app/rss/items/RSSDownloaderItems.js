@@ -12,6 +12,8 @@ const ItemDownloadPathBuilder = require('./ItemDownloadPathBuilder.js')
 const CaptionDownloader = require('./CaptionDownloader/CaptionDownloader.js')
 let nextChannelCount = 0
 
+const fs = require('fs')
+
 module.exports = async function (items, feedItem = {}) {
 
   if (!startTimer) {
@@ -83,6 +85,7 @@ module.exports = async function (items, feedItem = {}) {
         downloadedCount++
 
         console.log([`[RSSDownloaderItems] Download pushed`, item.url, feedFilename, downloadedCount, (new Date().toISOString())].join('\t'))
+        fs.writeFileSync(`/app/tmp/GetHTML.txt`, (new Date()).getTime() + '', 'utf8') 
         
         if (downloadedCount >= maxItems) {
           nextChannelCount++

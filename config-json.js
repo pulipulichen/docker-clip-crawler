@@ -2,21 +2,23 @@
 // const ConfigCheck = require('./app/config/ConfigCheck.js')
 // const feedList = require('./config-list.js')
 
-let test = '1743'
+let test = '1744'
 
 let CONFIG = {
-  // publicURL: `https://democwise2016.github.io/action-RSS-Fulltext/`,
-  publicURL: `https://dangerous-lizard-99.telebit.io/`,
+  publicURL: `https://democwise2016.github.io/action-RSS-Fulltext/`,
+  // publicURL: `https://dangerous-lizard-99.telebit.io/`,
   publicURLShorten: `https://ppt.cc/f6Ddzx`,
   thumbnailBorderColor: 'CC3333',
-  titleAppend: '[RSS+] 20230827-' + test,
-  idAppend: '20230827-' + test,
+  // titleAppend: '[RSS+] 20230827-' + test,
+  // idAppend: '20230827-' + test,
+  titleAppend: '[RSS+]',
+  idAppend: false,
 
   maxDownloadItemPerFeed: 3,
   maxDownloadFeed: 50,
   newArrialMax: 50,
   maxDownloadItems: 100,
-  maxExcutionMinutes: 25,
+  maxExcutionMinutes: 25,thumbnail: 'https://cdn.iplaysoft.com/ips/logo/200x200.png',
   maxWait: 3,
 
   maxFileCache: 5000,
