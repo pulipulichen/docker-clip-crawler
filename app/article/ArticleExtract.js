@@ -50,16 +50,18 @@ async function extractMainArticleHTML(url, selectors = [
 
     let $
     let article
-    selectors.forEach(selector => {
+    for (let i = 0; i < selectors.length; i++) {
+      let selector = selectors[i]
       $ = cheerio.load(html);
-      article = $(selector)
+      let tmpArticle = $(selector)
       // console.log({selector})
       // console.log(article.length)
-      if (article.length > 0) {
-        article = article.eq(0)
+      if (tmpArticle.length > 0) {
+        article = tmpArticle.eq(0)
         html = article.html()
+        break
       }
-    })
+    }
       
 
     if (article.length === 0) {
