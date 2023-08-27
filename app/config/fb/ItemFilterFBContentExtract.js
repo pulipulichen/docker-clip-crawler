@@ -14,7 +14,7 @@ let main = async function (item, options = {}) {
   let { referer, selector } = options
 
   let crawlTargetURL = await FBGetCrawlTargetURL(item.link)
-  // console.log({crawlTargetURL})
+  console.log({crawlTargetURL})
   // return item
 
   if (referer && crawlTargetURL.startsWith(referer) === false) {
