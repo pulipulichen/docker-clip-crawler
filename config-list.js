@@ -123,6 +123,24 @@ let feedList = [
       ItemFilters['fb'].ItemFilterFB,
     ],
   },
+  {
+    title: '輔大動漫電玩研習社 on Facebook',
+    feedID: 'fjuacg',
+    feedURL: 'http://fetchrss.com/rss/64eb0a337dd73b0d5e22166364eb0a4cba37016f6a4e5882.xml',
+    itemFilters: [
+      // ItemFilters['sites'].ItemFilterFBCheapAOE,
+      ItemFilters['fb'].ItemFilterFB,
+    ],
+  },
+  {
+    title: '時代力量 New Power Party on Facebook',
+    feedID: 'newpowerparty',
+    feedURL: 'http://fetchrss.com/rss/64eb0b9190839e65051fab1264eb0b9b8633336e073783c2.xml',
+    itemFilters: [
+      // ItemFilters['sites'].ItemFilterFBCheapAOE,
+      ItemFilters['fb'].ItemFilterFB,
+    ],
+  },
 ]
 
 // ----------------------------------------------------------------
