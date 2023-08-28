@@ -5,7 +5,11 @@ function createSafeFilename(input) {
   const truncatedInput = normalizedInput.substring(0, maxLength);
 
   // Replace invalid characters with underscores
-  const safeFilename = truncatedInput
+  let safeFilename = truncatedInput
+  safeFilename = safeFilename.split('/').join(' ');
+  safeFilename = safeFilename.split(',').join(' ');
+  safeFilename = safeFilename.split('\n').join(' ');
+  safeFilename = safeFilename.split('\\').join(' ');
 
   return safeFilename;
 }
