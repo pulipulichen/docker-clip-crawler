@@ -141,7 +141,7 @@ let main = async () => {
     }
   }
   
-  FeedIndexBuilder()
+  // FeedIndexBuilder()
 }
 
 main()

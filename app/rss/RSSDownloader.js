@@ -61,6 +61,7 @@ module.exports = async function (feedItem = {}) {
   
   // ---------
   // 建立Feed
+  return true
   let outputFeedString = await RSSFeedBuilder(feedJSON)
 
   // console.log(outputFeedString)
