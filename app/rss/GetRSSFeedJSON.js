@@ -27,7 +27,7 @@ module.exports = async function (feedURL, options = {}) {
     }
 
     let output = await parser.parseURL(feedURL)
-    // console.log(output)
+    console.log(output)
 
     if (!output.thumbnail && output.image && output.image.url) {
       output.thumbnail = output.image.url
