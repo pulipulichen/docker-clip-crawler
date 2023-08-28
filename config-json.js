@@ -22,6 +22,8 @@ let CONFIG = {
   maxWait: 5,
 
   maxFileCache: 5000,
+
+  proxy: 'https://script.google.com/macros/s/AKfycbxvQlZuQNHnxAcEmzJI9GxuiEAWYs3uPq2BmCvpkbpABKNKoc-Ahdqo6mqh8zzl-4nc/exec?proxy='
   // feedList
 }
 

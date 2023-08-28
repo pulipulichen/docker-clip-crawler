@@ -15,7 +15,8 @@ let main = async function (item, options = {}) {
 
   let {
     selector = 'article,#main,body',
-    referer
+    referer,
+    proxy
   } = options
 
   // console.log(CONFIG.publicURL)
@@ -49,6 +50,11 @@ let main = async function (item, options = {}) {
   // console.log(crawlTargetURL)
   // process.exit(1)
   // console.log({selector})
+
+  if (proxy) {
+    crawlTargetURL = CONFIG.proxy + encodeURIComponent(crawlTargetURL)
+  }
+
   let html = await ArticleExtract(crawlTargetURL, selector)
   html = ArticleRemoveAttributes(html)
   // console.log(article)

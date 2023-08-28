@@ -1,4 +1,4 @@
-let main = async function (item, options) {
+let main = async function (item, options = {}) {
 
   if (!item.content) {
     return item
