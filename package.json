@@ -1,7 +1,7 @@
 {
-  "name": "action-UT-Podcast",
+  "name": "docker-clip-crawler",
   "version": "1.0.0",
-  "description": "action-UT-Podcast",
+  "description": "docker-clip-crawler",
   "main": "index.js",
   "scripts": {
     "start": "docker-compose down; docker-compose up;node run-singlefile.js; rm ./output/input.txt*",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/democwise2016/action-UT-Podcast.git"
+    "url": "git+https://github.com/democwise2016/docker-clip-crawler.git"
   },
   "keywords": [
     "GitHub Action"
