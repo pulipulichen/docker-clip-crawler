@@ -2,13 +2,15 @@ let Parser = require('rss-parser');
 // let parser = new Parser();
 let parser
 let NodeCacheSqlite = require('../lib/NodeCacheSqlite.js');
+const CONFIG = require('../../config-json.js');
 
 module.exports = async function (feedURL, options = {}) {
   let {
     cacheDay = 0.3, 
+    proxy
   } = options
 
-  // return await NodeCacheSqlite.get('GetRSSFeedJSON', feedURL, async function () {
+  return await NodeCacheSqlite.get('GetRSSFeedJSON', feedURL, async function () {
     console.log('get feed', feedURL, (new Date()).toISOString())
 
     if (!parser) {
@@ -26,8 +28,13 @@ module.exports = async function (feedURL, options = {}) {
       })
     }
 
-    let output = await parser.parseURL(feedURL)
-    console.log(output)
+    let crawlTargetURL = feedURL
+    if (proxy) {
+      crawlTargetURL = CONFIG.proxy + encodeURIComponent(crawlTargetURL)
+    }
+
+    let output = await parser.parseURL(crawlTargetURL)
+    // console.log(output)
 
     if (!output.thumbnail && output.image && output.image.url) {
       output.thumbnail = output.image.url
@@ -79,5 +86,5 @@ module.exports = async function (feedURL, options = {}) {
     // console.log(output) 
 
     return output
-  // }, parseInt(cacheDay * 1000 * 60 * 60 * 24, 10))
+  }, parseInt(cacheDay * 1000 * 60 * 60 * 24, 10))
 }
