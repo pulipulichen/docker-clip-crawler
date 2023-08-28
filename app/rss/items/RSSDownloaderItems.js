@@ -14,7 +14,7 @@ let nextChannelCount = 0
 
 const fs = require('fs')
 
-module.exports = async function (items, feedItem = {}) {
+module.exports = async function (items = [], feedItem = {}) {
 
   if (!startTimer) {
     startTimer = (new Date()).getTime()
