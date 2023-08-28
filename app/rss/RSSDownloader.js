@@ -19,7 +19,7 @@ module.exports = async function (feedItem = {}) {
     feedID,
     feedFilename,
     // itemFilters, 
-    // options = {}
+    options = {}
   } = feedItem
 
   // ---------
@@ -33,7 +33,7 @@ module.exports = async function (feedItem = {}) {
 
   // ---------
   // 取得Feed的資訊
-  let feedJSON = await GetRSSFeedJSON(feedURL, feedItem)
+  let feedJSON = await GetRSSFeedJSON(feedURL, options)
   // fs.writeFileSync('/output/feed.json', JSON.stringify(feedJSON, null, 2), 'utf8')
   
   // ---------

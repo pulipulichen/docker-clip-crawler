@@ -33,9 +33,9 @@ module.exports = async function (feedURL, options = {}) {
       crawlTargetURL = CONFIG.proxy + encodeURIComponent(crawlTargetURL)
     }
 
-    console.log({crawlTargetURL})
+    // console.log({crawlTargetURL})
     let output = await parser.parseURL(crawlTargetURL)
-    console.log(output)
+    // console.log(output)
 
     if (!output.thumbnail && output.image && output.image.url) {
       output.thumbnail = output.image.url
