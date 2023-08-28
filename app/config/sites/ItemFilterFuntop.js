@@ -1,5 +1,17 @@
 let main = async function (item, options = {}) {
 
+  if (item.title) {
+    if (item.title.startsWith('[直播]') || 
+        item.title.startsWith('[轉播]') ||
+        item.title.startsWith('[線上看]') ||
+        item.title.startsWith('[好康]')) {
+      return false
+    }
+  }
+
+
+  // ----------------------------------------------------------------
+
   if (!item.content) {
     return item
   }
