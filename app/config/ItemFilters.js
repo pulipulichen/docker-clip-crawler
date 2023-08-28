@@ -27,6 +27,7 @@ const ItemFilterLinuxApps = require('./sites/ItemFilterLinuxApps.js')
 const ItemFilterLinuxeden = require('./sites/ItemFilterLinuxeden.js')
 const ItemFilterPTT = require('./sites/ItemFilterPTT.js')
 const ItemFilterFuntop = require('./sites/ItemFilterFuntop.js')
+const ItemFilterClips = require('./sites/ItemFilterClips.js')
 
 
 let ItemFilters = {
@@ -61,6 +62,7 @@ let ItemFilters = {
     ItemFilterLinuxeden,
     ItemFilterPTT,
     ItemFilterFuntop,
+    ItemFilterClips
   } 
 }
 
