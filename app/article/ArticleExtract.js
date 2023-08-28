@@ -13,12 +13,8 @@ const agent = new https.Agent({
 const NodeCacheSqlite = require('./../lib/NodeCacheSqlite')
 
 async function extractMainArticleHTML(url, selectors = [
-  'article', '#main', 'body',
   'main > .thin > .card',
-  '.post-entry',
   '.entry-content[itemprop="text"]',
-  '.entry-content',
-  '.p_mainnew',
   '.tdb_single_content .tdb-block-inner.td-fix-index',
   '.Zi_ad_ar_iR',
   '.first-thread > .user-comment-block',
@@ -27,7 +23,13 @@ async function extractMainArticleHTML(url, selectors = [
   '#article-content-inner[itemprop="articleBody"]',
   'article[id] > .td-post-content',
   'article[id] > .entry-content',
-  'article[id] > .entry__content'
+  'article[id] > .entry__content',
+  '.article-body > .article-content > .article-content-inner',
+  '.entry-content',
+  '.p_mainnew',
+  '.post-entry',
+  'article', '#main', 'body',
+  
 ]) {
   try {
     // Fetch the HTML content of the URL
