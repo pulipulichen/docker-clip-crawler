@@ -399,7 +399,8 @@ let feedList = [
       // ItemFilters['common'].ItemFilterImageEmbed,
     ],
     options: {
-      selector: 'article[id]'
+      selector: 'article[id]',
+      proxy: true
     }
   },
 ]
