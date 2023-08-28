@@ -14,7 +14,7 @@ let feedList = [
     title: '電腦王阿達',
     feedID: 'kocpc',
     feedURL: 'https://www.kocpc.com.tw/feed',
-    thumbnail: 'https://img.kocpc.com.tw/wp-content/uploads/2022/08/1661941426-562eb5778c5166ea5d98deddcb127065.png',
+    thumbnail: 'https://blogger.googleusercontent.com/img/a/AVvXsEh8KyFU8q9VBYbldI_qsuqPS4uFb3dbmQQR4LmjV8hbz9I1zHeSoVc2KStLIDD45r4iEsw5jO_rEOg33zvOOqcaAJ_Q3UKKE_p0Nl2dQIswqzPZug5Pt9duk5kzGbZGMHJq5xl0VzWMTBdqyPYfeLXMSJNIjrnTzklW7-KgS9gxuAT71FPGayV2_A',
     itemFilters: [
       ItemFilters['sites'].ItemFilterBlog
     ],
@@ -26,6 +26,7 @@ let feedList = [
     title: '湯姆群情報站',
     feedID: 'tomchun',
     feedURL: 'https://tomchun.tw/tomchun/feed/',
+    thumbnail: 'https://blogger.googleusercontent.com/img/a/AVvXsEju5EFJOlLKSu22pqf32N4FdZJcFuhZaDZGDNZxMK5MM6NErgYh3NR969XS7dnbpQfQufGn5b8UUo3VaB9oC1GbozqQb_sC1KmP1HScuFSrqLPyUe1sFVyX68YYpwwAaDxDjYVm-f1TATBzxShTEdz44qMtL3_O-hSnp1hsh2wGau1FTFLcDXrwig',
     itemFilters: [
       ItemFilters['common'].ItemFilterArticleClean,
       ItemFilters['common'].ItemFilterImageEmbed,
@@ -405,22 +406,19 @@ let feedList = [
 
 // ----------------------------------------------------------------
 
-feedList = [
-  { // <outline type="rss" text="FUNTOP資訊網++$0414-1925$" title="FUNTOP資訊網++$0414-1925$" xmlUrl="http://pulipuli.myqnapcloud.com/304/fc/$0414-1925$/http%3A%2F%2Ffuntop.tw%2Ffeed%2F" htmlUrl="https://funtop.tw/"/>
-    title: 'FUNTOP資訊網',
-    feedID: 'funtop',
-    feedURL: 'https://funtop.tw/feed/',
-    thumbnail: 'https://funtop.tw/wp-content/themes/funtop/img/favicon.ico?ver=1',
-    itemFilters: [
-      ItemFilters['sites'].ItemFilterBlog,
-      ItemFilters['sites'].ItemFilterFuntop,
-      // ItemFilters['common'].ItemFilterImageEmbed,
-    ],
-    options: {
-      selector: 'article[id]',
-      proxy: true
-    }
-  },
-]
+// feedList = [
+//   {
+//     title: '電腦王阿達',
+//     feedID: 'kocpc',
+//     feedURL: 'https://www.kocpc.com.tw/feed',
+//     thumbnail: 'https://i.ibb.co/bBSkPQk/2023-08-28-15-45.png',
+//     itemFilters: [
+//       ItemFilters['sites'].ItemFilterBlog
+//     ],
+//     options: {
+//       selector: '.Zi_ad_ar_iR'
+//     }
+//   },
+// ]
 
 module.exports = feedList

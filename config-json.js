@@ -2,8 +2,6 @@
 // const ConfigCheck = require('./app/config/ConfigCheck.js')
 // const feedList = require('./config-list.js')
 
-let test = '1751'
-
 let CONFIG = {
   publicURL: `https://democwise2016.github.io/action-RSS-Fulltext/`,
   // publicURL: `https://dangerous-lizard-99.telebit.io/`,
@@ -26,6 +24,8 @@ let CONFIG = {
   proxy: 'https://script.google.com/macros/s/AKfycbxvQlZuQNHnxAcEmzJI9GxuiEAWYs3uPq2BmCvpkbpABKNKoc-Ahdqo6mqh8zzl-4nc/exec?proxy='
   // feedList
 }
+
+// let test = '1754'
 
 // CONFIG.publicURL = `https://dangerous-lizard-99.telebit.io/`
 // CONFIG.titleAppend = '[RSS+] 20230827-' + test,
