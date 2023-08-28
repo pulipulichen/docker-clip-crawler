@@ -46,9 +46,10 @@ let main = async function (item, options = {}) {
   let title = createSafeFilename(item.title)
   let url = extractFirstHref(item.content)
   let date = item.isoDate.slice(0, 7).split('-').join('/')
-  let filepath = `./output/${date}/${title}.html`
+  let ext = 'docx'
+  let filepath = `./output/${date}/${title}.${ext}`
 
-  if (fs.existsSync(`/output/${date}/${title}.html`)) {
+  if (fs.existsSync(`/output/${date}/${title}.${ext}`)) {
     return false
   }
   // console.log({title, url})
