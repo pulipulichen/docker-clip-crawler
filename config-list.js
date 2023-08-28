@@ -403,6 +403,19 @@ let feedList = [
       proxy: true
     }
   },
+  { // <outline type="rss" text="學不完．教不停．用不盡 :: 痞客邦 PIXNET ::" title="學不完．教不停．用不盡 :: 痞客邦 PIXNET ::" xmlUrl="http://feeds.feedburner.com/pixnetisvincent"/>
+    title: '學不完．教不停．用不盡',
+    feedID: 'pixnetisvincent',
+    feedURL: 'http://feeds.feedburner.com/pixnetisvincent',
+    itemFilters: [
+      ItemFilters['sites'].ItemFilterBlog,
+      // ItemFilters['common'].ItemFilterImageEmbed,
+      // ItemFilters['common'].ItemFilterThumbnailCache,
+    ],
+    options: {
+      selector: '.article-body > .article-content > .article-content-inner'
+    }
+  },
 ]
 
 // ----------------------------------------------------------------
