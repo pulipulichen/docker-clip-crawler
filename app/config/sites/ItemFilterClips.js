@@ -6,18 +6,18 @@ function createSafeFilename(input) {
 
   // Replace invalid characters with underscores
   let safeFilename = truncatedInput
-  safeFilename = safeFilename.split('/').join(' ');
-  safeFilename = safeFilename.split(',').join(' ');
-  safeFilename = safeFilename.split('\n').join(' ');
-  safeFilename = safeFilename.split('\\').join(' ');
-  safeFilename = safeFilename.split(':').join(' ');
-  safeFilename = safeFilename.split('!').join(' ');
-  safeFilename = safeFilename.split('?').join(' ');
-  safeFilename = safeFilename.split(';').join(' ');
-  safeFilename = safeFilename.replace(/[!"'*+,/:;?^`]/g, ' ');
+  safeFilename = safeFilename.split('/').join(' ').trim()
+  safeFilename = safeFilename.split(',').join(' ').trim()
+  safeFilename = safeFilename.split('\n').join(' ').trim()
+  safeFilename = safeFilename.split('\\').join(' ').trim()
+  safeFilename = safeFilename.split(':').join(' ').trim()
+  safeFilename = safeFilename.split('!').join(' ').trim()
+  safeFilename = safeFilename.split('?').join(' ').trim()
+  safeFilename = safeFilename.split(';').join(' ').trim()
+  safeFilename = safeFilename.replace(/[!"'*+,/:;?^`]/g, ' ').trim()
 
   while (safeFilename.indexOf('  ') > -1) {
-    safeFilename = safeFilename.split('  ').join(' ');
+    safeFilename = safeFilename.split('  ').join(' ').trim()
   }
 
   return safeFilename;
