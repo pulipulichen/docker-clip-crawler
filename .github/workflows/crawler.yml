@@ -89,9 +89,9 @@ jobs:
       #   run: |
       #     rm -f ./cache/node-cache-sqlite_*object*.sqlite
 
-      - name: Clean Object Cache node-cache.sqlite
-        run: |
-          rm -f ./output/funtop-script.google.com-1ce39e89c3.rss
+      # - name: Clean Object Cache node-cache.sqlite
+      #   run: |
+      #     rm -f ./output/funtop-script.google.com-1ce39e89c3.rss
 
       # - name: Clean Cache
       #   run: |
