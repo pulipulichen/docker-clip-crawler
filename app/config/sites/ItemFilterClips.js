@@ -11,6 +11,10 @@ function createSafeFilename(input) {
   safeFilename = safeFilename.split('\n').join(' ');
   safeFilename = safeFilename.split('\\').join(' ');
   safeFilename = safeFilename.split(':').join(' ');
+  safeFilename = safeFilename.split('!').join(' ');
+  safeFilename = safeFilename.split('?').join(' ');
+  safeFilename = safeFilename.split(';').join(' ');
+  safeFilename = safeFilename.replace(/[!"'*+,/:;?^`]/g, ' ');
 
   while (safeFilename.indexOf('  ') > -1) {
     safeFilename = safeFilename.split('  ').join(' ');
