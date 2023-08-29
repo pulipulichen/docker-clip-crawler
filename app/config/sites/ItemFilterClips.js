@@ -62,8 +62,24 @@ let main = async function (item, options = {}) {
   let ext = 'html.docx'
   let filepath = `./output/${date}/${title}.${ext}`
 
-  if (fs.existsSync(`/output/${date}/${title}.${ext}`)) {
-    return false
+  let localpath = filepath.slice(1)
+  if (fs.existsSync(localpath)) {
+    try {
+      // Get file stats synchronously
+      const stats = fs.statSync(localpath);
+    
+      // If file size is 0, remove the file
+      if (stats.size === 0) {
+        fs.unlinkSync(localpath);
+        console.log('File removed successfully.');
+      } else {
+        console.log('File size is not 0. No action taken.');
+        return false
+      }
+    } catch (err) {
+      console.error('Error:', err);
+    }
+    // return false
   }
   // console.log({title, url})
   // console.log({title, url})

@@ -17,8 +17,23 @@ if (fs.existsSync(inputFilePath) === false) {
   process.exit(0)
 }
 
+function runDocker (url, outputPath) {
+  return new Promise((resolve, reject) => {
+    const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
+    exec(dockerCommand, (error) => {
+      if (error) {
+        console.error('Error running Docker command:', error);
+        reject(error)
+      } else {
+        console.log(`Downloaded ${url} and saved to ${outputPath}`);
+        resolve(true)
+      }
+    });
+  })
+}
+
 // Read the input file
-fs.readFile(inputFilePath, 'utf8', (err, data) => {
+fs.readFile(inputFilePath, 'utf8', async (err, data) => {
   if (err) {
     console.error('Error reading input file:', err);
     return;
@@ -26,7 +41,8 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
   const lines = data.trim().split('\n');
 
-  lines.forEach((line) => {
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i].trim();
     const [url, outputPath] = line.split(',').map((field) => field.trim());
 
     // Extract directory from output path
@@ -37,6 +53,8 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
       fs.mkdirSync(outputDir, { recursive: true });
     }
 
+    await runDocker(url, outputPath)
+
     // Download the URL and save to the output path
     // const file = fs.createWriteStream(outputPath);
     // https.get(url, (response) => {
@@ -45,17 +63,10 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
         // file.close();
 
         // Run the Docker command
-        const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
-        exec(dockerCommand, (error) => {
-          if (error) {
-            console.error('Error running Docker command:', error);
-          } else {
-            console.log(`Downloaded ${url} and saved to ${outputPath}`);
-          }
-        });
+        
       // });
     // }).on('error', (error) => {
     //   console.error('Error downloading URL:', error);
     // });
-  });
+  }
 });
