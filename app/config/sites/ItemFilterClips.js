@@ -14,6 +14,8 @@ function createSafeFilename(input) {
   safeFilename = safeFilename.split('!').join(' ').trim()
   safeFilename = safeFilename.split('?').join(' ').trim()
   safeFilename = safeFilename.split(';').join(' ').trim()
+  safeFilename = safeFilename.split('"').join(' ').trim()
+  safeFilename = safeFilename.split("'").join(' ').trim()
   safeFilename = safeFilename.replace(/[!"'*+,/:;?^`]/g, ' ').trim()
 
   while (safeFilename.indexOf('  ') > -1) {
