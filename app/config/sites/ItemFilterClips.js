@@ -63,7 +63,7 @@ let main = async function (item, options = {}) {
   let date = item.isoDate.slice(0, 7).split('-').join('/')
   let ext = 'html.docx'
   let filepath = `./output/${date}/${title}.${ext}`
-  let noteFilepath = `./output/${date}/${title}.note.html.docx`
+  let noteFilepath = `./output/${date}/${title}.note.html.docxku`
 
 
   let localpath = filepath.slice(1)
@@ -75,9 +75,9 @@ let main = async function (item, options = {}) {
       // If file size is 0, remove the file
       if (stats.size === 0) {
         fs.unlinkSync(localpath);
-        console.log('File removed successfully.');
+        // console.log('File removed successfully.');
       } else {
-        console.log('File size is not 0. No action taken.');
+        // console.log('File size is not 0. No action taken.');
         return false
       }
     } catch (err) {
