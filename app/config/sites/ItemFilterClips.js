@@ -63,6 +63,8 @@ let main = async function (item, options = {}) {
   let date = item.isoDate.slice(0, 7).split('-').join('/')
   let ext = 'html.docx'
   let filepath = `./output/${date}/${title}.${ext}`
+  let noteFilepath = `./output/${date}/${title}.note.html`
+
 
   let localpath = filepath.slice(1)
   if (fs.existsSync(localpath)) {
@@ -90,6 +92,7 @@ let main = async function (item, options = {}) {
   console.log(line)
   appendToFile('/output/input.txt', line)
 
+  fs.writeFileSync(noteFilepath, item.content, 'utf-8')
   // return item
   return false
 }
