@@ -20,6 +20,7 @@ if (fs.existsSync(inputFilePath) === false) {
 function runDocker (url, outputPath) {
   return new Promise((resolve, reject) => {
     const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
+    console.log(`[RUN] ${dockerCommand}`)
     exec(dockerCommand, (error) => {
       if (error) {
         console.error('Error running Docker command:', error);
