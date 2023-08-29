@@ -92,7 +92,9 @@ let main = async function (item, options = {}) {
   console.log(line)
   appendToFile('/output/input.txt', line)
 
-  fs.writeFileSync(noteFilepath, item.content, 'utf-8')
+  if (!fs.existsSync(noteFilepath)) {
+    fs.writeFileSync(noteFilepath, item.content, 'utf-8')
+  }
   // return item
   return false
 }
