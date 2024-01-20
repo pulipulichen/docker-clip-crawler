@@ -1,4 +1,6 @@
-https://www.youtube.com/watch?v=iex9z_Zmzhw
+# docker-clip-crawler
 
-https://democwise2016.github.io/action-RSS-FB-Feed/
+https://github.com/pulipulichen/docker-clip-crawler
 
+如何操作：
+https://docs.google.com/document/d/1aBTswqIB_tOXYuwvFuXx0z1lVD4fcENjOrEC3NLCifQ/edit?usp=sharing
