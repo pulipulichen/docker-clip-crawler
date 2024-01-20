@@ -17,16 +17,28 @@ if (fs.existsSync(inputFilePath) === false) {
   process.exit(0)
 }
 
+const HTMLtoDOCX = require('html-to-docx');
+
 function runDocker (url, outputPath) {
   return new Promise((resolve, reject) => {
     const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
     console.log(`[RUN] ${dockerCommand}`)
-    exec(dockerCommand, (error) => {
+    exec(dockerCommand, async (error) => {
       if (error) {
         console.error('Error running Docker command:', error);
         reject(error)
       } else {
         console.log(`Downloaded ${url} and saved to ${outputPath}`);
+
+        let htmlString = await fs.readFileSync(outputPath, 'utf8')
+        const fileBuffer = await HTMLtoDOCX(htmlString, null, {
+          table: { row: { cantSplit: true } },
+          footer: true,
+          pageNumber: true,
+        });
+      
+        fs.writeFileSync(outputPath + '.docx', fileBuffer)
+
         resolve(true)
       }
     });

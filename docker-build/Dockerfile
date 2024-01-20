@@ -124,3 +124,5 @@ RUN npm link he@1.2.0
 RUN npm link mime-types@2.1.35
 
 RUN npm link axios@1.4.0
+
+RUN npm link html-to-docx@1.8.0

@@ -43,6 +43,7 @@ function extractFirstHref(htmlString) {
 // =============
 
 const fs = require('fs');
+const HTMLtoDOCX = require('html-to-docx');
 
 function appendToFile(filePath, content) {
   if (!fs.existsSync(filePath)) {
@@ -61,10 +62,10 @@ let main = async function (item, options = {}) {
   let title = createSafeFilename(item.title)
   let url = extractFirstHref(item.content)
   let date = item.isoDate.slice(0, 7).split('-').join('/')
-  let ext = 'html.docx'
+  // let ext = 'html.docx'
+  let ext = 'html'
   let filepath = `./output/${date}/${title}.${ext}`
   let noteFilepath = `./output/${date}/${title}.note.html.docx`
-
 
   let localpath = filepath.slice(1)
   if (fs.existsSync(localpath)) {
@@ -93,10 +94,21 @@ let main = async function (item, options = {}) {
   appendToFile('/output/input.txt', line)
 
   if (!fs.existsSync(noteFilepath)) {
-    fs.writeFileSync(noteFilepath, item.content, 'utf-8')
+    // fs.writeFileSync(noteFilepath, item.content, 'utf-8')
+    await writeDocxFile(noteFilepath, item.content)
   }
   // return item
   return false
+}
+
+async function writeDocxFile(filePath, htmlString) {
+  const fileBuffer = await HTMLtoDOCX(htmlString, null, {
+    table: { row: { cantSplit: true } },
+    footer: true,
+    pageNumber: true,
+  });
+
+  fs.writeFileSync(filePath, fileBuffer)
 }
 
 module.exports = main
