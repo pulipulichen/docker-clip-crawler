@@ -6,7 +6,7 @@ sudo apt-get install -y docker.io
 
 # Install Node.js
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs npm
 
 # Verify installations
 docker --version
@@ -18,3 +18,9 @@ echo "use_locks 0" | sudo tee -a /etc/davfs2/davfs2.conf
 # sudo chmod 600 /etc/davfs2/secrets
 
 # sudo mkdir /output
+
+sudo docker pull capsulecode/singlefile
+sudo docker tag capsulecode/singlefile singlefile
+
+cd $(dirname $0)
+npm i
