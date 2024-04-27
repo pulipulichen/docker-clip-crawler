@@ -27,4 +27,5 @@ npm i
 
 mkdir -p /output
 
-# <WebDAV_URL> /output davfs rw,user,noauto 0 0
+# sudo nano /etc/fstab
+# <WebDAV_URL> /output davfs rw,user,auto 0 0
