@@ -23,7 +23,6 @@ sudo docker pull capsulecode/singlefile
 sudo docker tag capsulecode/singlefile singlefile
 
 cd $(dirname $0)
-sudo apt-get install -y npm
 npm i
 
 mkdir -p /output
