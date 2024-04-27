@@ -11,7 +11,7 @@ process.chdir(scriptDir);
 
 
 // Input file containing URLs and output paths
-const inputFilePath = './output/input.txt';
+const inputFilePath = '/output/input.txt';
 
 if (fs.existsSync(inputFilePath) === false) {
   process.exit(0)
@@ -21,7 +21,7 @@ const HTMLtoDOCX = require('html-to-docx');
 
 function runDocker (url, outputPath) {
   return new Promise((resolve, reject) => {
-    const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
+    const dockerCommand = `sudo docker run singlefile "${url}" > "${outputPath}"`;
     console.log(`[RUN] ${dockerCommand}`)
     exec(dockerCommand, async (error) => {
       if (error) {
