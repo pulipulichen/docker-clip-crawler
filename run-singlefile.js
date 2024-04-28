@@ -37,7 +37,7 @@ function runDocker (url, outputPath) {
       fs.unlinkSync(tmpFile + '.docx')
     } 
 
-    const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
+    const dockerCommand = `single-file "${url}" --dump-content > "${outputPath}"`;
 //     const dockerCommandProxy = `docker run singlefile "${url}" > "${tmpFile}"`;
     const dockerCommandProxy = `single-file "${url}" --dump-content > "${tmpFile}"`;
     console.log(`[RUN] ${dockerCommand}`)
