@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#cd $(dirname "$1")
+echo `$(dirname "$1")`
+echo `$(dirname "$0")`
+cd $(dirname "$1")
 cd ~/docker-clip-crawler/
 
 # git pull
