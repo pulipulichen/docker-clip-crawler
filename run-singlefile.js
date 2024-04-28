@@ -48,6 +48,11 @@ function runDocker (url, outputPath) {
       } else {
         console.log(`Downloaded ${url} and saved to ${tmpFile}`);
 
+        console.log({
+          tmpFile,
+          outputPath,
+          exists: fs.existsSync(outputPath)
+        })
         if (fs.existsSync(outputPath) === false) {
           fs.copyFileSync(tmpFile, outputPath)
         }
