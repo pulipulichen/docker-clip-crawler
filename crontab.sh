@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "$(dirname '$1')"
-echo "$(dirname '$0')"
+script_dir=$(dirname "$0")
+echo "$script_dir"
 cd $(dirname "$1")
 cd ~/docker-clip-crawler/
 
