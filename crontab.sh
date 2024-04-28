@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #cd $(dirname "$1")
-cd /home/pudding/docker-clip-crawler/
+cd ~/docker-clip-crawler/
 
 # git pull
 npm run start
