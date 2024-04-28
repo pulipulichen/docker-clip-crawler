@@ -1,11 +1,12 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
+#cd $(dirname "$1")
+cd /home/pudding/docker-clip-crawler/
 
-git pull
+# git pull
 npm run start
 
-file_path="./output/input.txt"
+file_path="/output/input.txt"
 
 # Check if the file exists
 if [ -f "$file_path" ]; then
@@ -14,7 +15,7 @@ if [ -f "$file_path" ]; then
   echo "Removed $file_path"
   
   # Run the crontab.sh script
-  ./crontab.sh
+  # ./crontab.sh
   
 else
   echo "$file_path does not exist. Exiting."

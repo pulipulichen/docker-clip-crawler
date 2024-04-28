@@ -3,6 +3,7 @@
 # Install Docker
 sudo apt-get update
 sudo apt-get install -y docker.io
+sudo apt-get install -y docker-compose
 
 # Install Node.js
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -

@@ -39,7 +39,7 @@ function runDocker (url, outputPath) {
 
     const dockerCommand = `docker run singlefile "${url}" > "${outputPath}"`;
 //     const dockerCommandProxy = `docker run singlefile "${url}" > "${tmpFile}"`;
-    const dockerCommandProxy = `single-file "${url}" > "${tmpFile}"`;
+    const dockerCommandProxy = `single-file "${url}" --dump-content > "${tmpFile}"`;
     console.log(`[RUN] ${dockerCommand}`)
     exec(dockerCommandProxy, async (error) => {
       if (error) {
