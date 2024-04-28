@@ -1,9 +1,7 @@
 #!/bin/bash
 
 script_dir=$(dirname "$0")
-echo "$script_dir"
-cd $(dirname "$1")
-cd ~/docker-clip-crawler/
+cd "$script_dir"
 
 # git pull
 npm run start
