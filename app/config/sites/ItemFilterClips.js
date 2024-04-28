@@ -64,8 +64,8 @@ let main = async function (item, options = {}) {
   let date = item.isoDate.slice(0, 7).split('-').join('/')
   // let ext = 'html.docx'
   let ext = 'html'
-  let filepath = `./output/${date}/${title}.${ext}`
-  let noteFilepath = `./output/${date}/${title}.note.html.docx`
+  let filepath = `/output/${date}/${title}.${ext}`
+  let noteFilepath = `/output/${date}/${title}.note.html.docx`
 
   let localpath = filepath.slice(1)
   if (fs.existsSync(localpath)) {
