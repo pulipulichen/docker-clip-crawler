@@ -41,6 +41,18 @@ function runDocker (url, outputPath) {
 //     const dockerCommandProxy = `docker run singlefile "${url}" > "${tmpFile}"`;
     const dockerCommandProxy = `sudo single-file "${url}" --dump-content > "${tmpFile}"`;
     console.log(`[RUN] ${dockerCommand}`)
+
+    let isFinished = false
+
+    setTimeout(() => {
+      if (isFinished) {
+        return false
+      }
+      isFinished = true
+
+      resolve(false)
+    }, 60000)
+
     exec(dockerCommandProxy, async (error) => {
       if (error) {
         console.error('Error running Docker command:', error);
@@ -76,8 +88,11 @@ function runDocker (url, outputPath) {
           
 
         
-        
+        if (isFinished) {
+          return false
+        }
 
+        isFinished = true
         resolve(true)
       }
     });
