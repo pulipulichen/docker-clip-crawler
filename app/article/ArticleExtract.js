@@ -81,6 +81,7 @@ async function extractMainArticleHTML(url, selectors = [
     return mainArticle;
   } catch (error) {
     console.error('Error:', error.message);
+    console.log(error.stack)
     return null;
   }
 }
