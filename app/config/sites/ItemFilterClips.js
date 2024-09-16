@@ -66,7 +66,9 @@ let main = async function (item, options = {}) {
   let ext = 'html'
   let filepath = `/output/${date}/${title}.${ext}`
   let noteFilepath = `/output/${date}/${title}.note.html.docx`
-  fs.mkdirSync(`/output/${date}/`, { recursive: true})
+  if (fs.existsSync(`/output/${date}/`) === false) {
+    fs.mkdirSync(`/output/${date}/`, { recursive: true})
+  }
 
   let localpath = filepath.slice(1)
   if (fs.existsSync(localpath)) {

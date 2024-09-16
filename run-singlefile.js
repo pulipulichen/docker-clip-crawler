@@ -13,7 +13,7 @@ process.chdir(scriptDir);
 
 
 // Input file containing URLs and output paths
-const inputFilePath = '/output/input.txt';
+const inputFilePath = './output/input.txt';
 
 if (fs.existsSync(inputFilePath) === false) {
   console.log(`${inputFilePath} does not exists`)
