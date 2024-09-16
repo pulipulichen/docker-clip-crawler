@@ -62,6 +62,7 @@ function runDocker (url, outputPath) {
 
         console.log({
           tmpFile,
+          url,
           outputPath,
           exists: fs.existsSync(outputPath)
         })
@@ -88,8 +89,6 @@ function runDocker (url, outputPath) {
             }
           }
         }
-          
-
         
         if (isFinished) {
           return false
