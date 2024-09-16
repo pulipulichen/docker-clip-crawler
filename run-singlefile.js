@@ -40,7 +40,7 @@ function runDocker (url, outputPath) {
     const dockerCommand = `single-file "${url}" --dump-content > "${outputPath}"`;
     const dockerCommandProxy = `docker run singlefile "${url}" > "${tmpFile}"`;
     // const dockerCommandProxy = `sudo single-file "${url}" --dump-content > "${tmpFile}"`;
-    console.log(`[RUN] ${dockerCommand}`)
+    console.log(`[RUN] ${dockerCommandProxy}`)
 
     let isFinished = false
 
