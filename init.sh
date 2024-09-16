@@ -23,6 +23,8 @@ echo "use_locks 0" | sudo tee -a /etc/davfs2/davfs2.conf
 sudo docker pull capsulecode/singlefile
 sudo docker tag capsulecode/singlefile singlefile
 
+sudo npm install -g "gildas-lormeau/SingleFile#master"
+
 cd $(dirname $0)
 npm i
 
