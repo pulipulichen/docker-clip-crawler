@@ -116,9 +116,9 @@ fs.readFile(inputFilePath, 'utf8', async (err, data) => {
 
     // Extract directory from output path
     let outputDir = path.dirname(outputPath);
-    // if (outputDir.startsWith('/')) {
-    //   outputDir = '.' + outputDir
-    // }
+    if (outputDir.startsWith('./')) {
+      outputDir = outputDir.slice(1)
+    }
 
     // Create the output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {
