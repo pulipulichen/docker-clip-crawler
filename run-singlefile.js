@@ -71,18 +71,20 @@ function runDocker (url, outputPath) {
 
         if (fs.existsSync(outputPath + '.docx') === false) {
           let htmlString = await fs.readFileSync(tmpFile, 'utf8')
-          try {
-            const fileBuffer = await HTMLtoDOCX(htmlString, null, {
-              table: { row: { cantSplit: true } },
-              footer: true,
-              pageNumber: true,
-            });
-          
-            fs.writeFileSync(tmpFile + '.docx', fileBuffer)
-            fs.copyFileSync(tmpFile + '.docx', outputPath + '.docx')
-          }
-          catch (e) {
-            console.error(e)
+          if (htmlString.trim() !== '') {
+            try {
+              const fileBuffer = await HTMLtoDOCX(htmlString, null, {
+                table: { row: { cantSplit: true } },
+                footer: true,
+                pageNumber: true,
+              });
+            
+              fs.writeFileSync(tmpFile + '.docx', fileBuffer)
+              fs.copyFileSync(tmpFile + '.docx', outputPath + '.docx')
+            }
+            catch (e) {
+              console.error(e)
+            }
           }
         }
           
