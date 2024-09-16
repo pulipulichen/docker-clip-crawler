@@ -115,7 +115,10 @@ fs.readFile(inputFilePath, 'utf8', async (err, data) => {
     const [url, outputPath] = line.split(',').map((field) => field.trim());
 
     // Extract directory from output path
-    const outputDir = path.dirname(outputPath);
+    let outputDir = path.dirname(outputPath);
+    if (outputDir.startsWith('/')) {
+      outputDir = '.' + outputDir
+    }
 
     // Create the output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {
