@@ -26,7 +26,7 @@ sudo docker tag capsulecode/singlefile singlefile
 cd $(dirname $0)
 npm i
 
-mkdir -p /output
+mkdir -p /output || true
 
 # sudo nano /etc/fstab
 # <WebDAV_URL> /output davfs rw,user,auto 0 0
