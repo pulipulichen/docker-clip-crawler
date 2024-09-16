@@ -83,6 +83,7 @@ function runDocker (url, outputPath) {
               fs.copyFileSync(tmpFile + '.docx', outputPath + '.docx')
             }
             catch (e) {
+              console.log({htmlString})
               console.error(e)
             }
           }
