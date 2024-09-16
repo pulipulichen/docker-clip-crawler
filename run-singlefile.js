@@ -13,7 +13,7 @@ process.chdir(scriptDir);
 
 
 // Input file containing URLs and output paths
-const inputFilePath = './output/input.txt';
+const inputFilePath = '/output/input.txt';
 
 if (fs.existsSync(inputFilePath) === false) {
   console.log(`${inputFilePath} does not exists`)
@@ -116,9 +116,9 @@ fs.readFile(inputFilePath, 'utf8', async (err, data) => {
 
     // Extract directory from output path
     let outputDir = path.dirname(outputPath);
-    if (outputDir.startsWith('/')) {
-      outputDir = '.' + outputDir
-    }
+    // if (outputDir.startsWith('/')) {
+    //   outputDir = '.' + outputDir
+    // }
 
     // Create the output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {
