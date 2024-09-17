@@ -24,6 +24,7 @@ node --version
 # sudo docker tag capsulecode/singlefile singlefile
 
 sudo npm install -g "gildas-lormeau/SingleFile#master"
+sudo npm install -g single-file-cli
 
 cd $(dirname $0)
 npm i
