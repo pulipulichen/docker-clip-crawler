@@ -109,7 +109,9 @@ fs.readFile(inputFilePath, 'utf8', async (err, data) => {
     return;
   }
 
+  console.log(`================================================================`)
   console.log(data)
+  console.log(`================================================================`)
 
   const lines = data.trim().split('\n');
 

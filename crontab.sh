@@ -11,7 +11,7 @@ file_path="/output/input.txt"
 # Check if the file exists
 if [ -f "$file_path" ]; then
   # Remove the file
-  rm "$file_path"
+  sudo rm -rf "$file_path"
   echo "Removed $file_path"
   
   # Run the crontab.sh script
