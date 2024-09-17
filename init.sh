@@ -2,7 +2,7 @@
 
 # Install Docker
 sudo apt-get update
-sudo apt-get install -y docker.io
+# sudo apt-get install -y docker.io
 sudo apt-get install -y docker-compose
 
 # Install Node.js
@@ -13,17 +13,17 @@ sudo apt-get install -y nodejs
 docker --version
 node --version
 
-sudo apt-get install davfs2 -y
-echo "use_locks 0" | sudo tee -a /etc/davfs2/davfs2.conf
+# sudo apt-get install davfs2 -y
+# echo "use_locks 0" | sudo tee -a /etc/davfs2/davfs2.conf
 # echo "${WEBDAV_URL} ${WEBDAV_USER} ${WEBDAV_PW}" | sudo tee /etc/davfs2/secrets
 # sudo chmod 600 /etc/davfs2/secrets
 
 # sudo mkdir /output
 
-sudo docker pull capsulecode/singlefile
-sudo docker tag capsulecode/singlefile singlefile
+# sudo docker pull capsulecode/singlefile
+# sudo docker tag capsulecode/singlefile singlefile
 
-# sudo npm install -g "gildas-lormeau/SingleFile#master"
+sudo npm install -g "gildas-lormeau/SingleFile#master"
 
 cd $(dirname $0)
 npm i
