@@ -78,7 +78,7 @@ module.exports = async function (items, feedItem = {}) {
           }
         }
         if (passed === false) {
-          console.log([`[UBDownloader] Not paassed`, `https://www.youtube.com/watch?v=${item.id}`, feedFilename, (new Date().toISOString())].join('\t'))
+          console.log([`[UBDownloader] Not passed`, `https://www.youtube.com/watch?v=${item.id}`, feedFilename, (new Date().toISOString())].join('\t'))
           continue
         }
 

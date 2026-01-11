@@ -76,7 +76,7 @@ module.exports = async function (items = [], feedItem = {}) {
           }
         }
         if (passed === false) {
-          console.log([`[RSSDownloaderItems] Not paassed`, item.link, feedFilename, (new Date().toISOString())].join('\t'))
+          console.log([`[RSSDownloaderItems] Not passed`, item.link, feedFilename, (new Date().toISOString())].join('\t'))
           continue
         }
  

@@ -4,7 +4,7 @@ script_dir=$(dirname "$0")
 cd "$script_dir"
 
 # git pull
-npm run start
+sudo npm run start
 
 file_path="/output/input.txt"
 
