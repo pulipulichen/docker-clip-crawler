@@ -2,7 +2,7 @@
 
 find /output -mindepth 1 -name "lost+found" -prune -o -exec chmod 777 {} +
 
-ls -lh /cache/*.sqlite || true
+# ls -lh /cache/*.sqlite || true
 # ls -lh / || true
 
 export NODE_OPTIONS=--max-old-space-size=4096
