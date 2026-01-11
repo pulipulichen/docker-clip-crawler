@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod -R 777 /output/*
+find /output -mindepth 1 -name "lost+found" -prune -o -exec chmod 777 {} +
 
 ls -lh /cache/*.sqlite || true
 # ls -lh / || true
